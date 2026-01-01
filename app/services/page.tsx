@@ -7,57 +7,57 @@ export default function ServicesPage() {
     {
       id: 1,
       title: "Lightning Protection System",
-      image: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&q=80",
+      image: "/images/lightning.jpg",
       description: "Advanced lightning protection for complete facility safety",
     },
     {
       id: 2,
       title: "Surge Protection Device",
-      image: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&q=80",
+      image: "/images/surge.jpg",
       description: "Protect your equipment from voltage surges and spikes",
     },
     {
       id: 3,
       title: "Chemical Earthing Solution",
-      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80",
+      image: "/images/earthing.jpg",
       description: "Low resistance earthing systems for optimal safety",
     },
     {
       id: 4,
       title: "Online UPS",
-      image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&q=80",
+      image: "/images/ups.jpg",
       description: "Uninterrupted power supply for critical operations",
     },
     {
       id: 5,
       title: "Servo Stabilizer",
-      image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80",
+      image: "/images/servo.jpg",
       description: "Voltage regulation for sensitive equipment protection",
     },
     {
       id: 6,
       title: "Lithium Ion Batteries",
-      image: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&q=80",
+      image: "/images/battery.jpg",
       description: "High-efficiency energy storage solutions",
     },
     {
       id: 7,
       title: "Solar EPC & BOS",
-      image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80",
+      image: "/images/solar.jpg",
       description: "Complete solar engineering, procurement & construction",
     },
     {
       id: 8,
       title: "Power Quality Audit",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
+      image: "/images/audit.jpg",
       description: "Comprehensive power system analysis and optimization",
     },
   ];
 
   return (
-    <div className="pt-20 min-h-screen bg-slate-50 dark:bg-gray-900">
+    <div className="pt-20 min-h-screen bg-gray-100 dark:bg-gray-900">
       {/* Page Header */}
-      <section className="bg-white dark:bg-dark-bg border-b border-gray-200 dark:border-gray-800 py-12">
+      <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-heading font-bold text-4xl md:text-5xl text-gray-900 dark:text-white mb-4">
             Our Services
@@ -75,7 +75,7 @@ export default function ServicesPage() {
           {services.map((service) => (
             <div
               key={service.id}
-              className="group bg-white dark:bg-gray-800 border border-slate-100 dark:border-gray-700 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:border-orange-200 transition-all duration-300 hover:scale-105"
             >
               {/* Image Area */}
               <div className="relative aspect-[4/3] overflow-hidden">

@@ -48,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${leagueSpartan.variable} ${openSans.variable} ${dancingScript.variable} antialiased bg-slate-50 text-slate-900`}
+        className={`${leagueSpartan.variable} ${openSans.variable} ${dancingScript.variable} antialiased bg-gray-100 text-slate-900`}
       >
         <Navbar />
         <main className="min-h-screen">{children}</main>
