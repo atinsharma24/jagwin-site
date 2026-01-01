@@ -1,6 +1,36 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Handshake } from "lucide-react";
+import { useState } from "react";
+
+// Image fallback component
+function ImageWithFallback({
+  src,
+  fallbackSrc,
+  alt,
+  ...props
+}: {
+  src: string;
+  fallbackSrc: string;
+  alt: string;
+  fill?: boolean;
+  className?: string;
+}) {
+  const [imgSrc, setImgSrc] = useState(src);
+
+  return (
+    <Image
+      {...props}
+      src={imgSrc}
+      alt={alt}
+      onError={() => {
+        setImgSrc(fallbackSrc);
+      }}
+    />
+  );
+}
 
 export default function ServicesPage() {
   const services = [
@@ -8,48 +38,56 @@ export default function ServicesPage() {
       id: 1,
       title: "Lightning Protection System",
       image: "/images/lightning.jpg",
+      fallback: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&q=80",
       description: "Advanced lightning protection for complete facility safety",
     },
     {
       id: 2,
       title: "Surge Protection Device",
       image: "/images/surge.jpg",
+      fallback: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&q=80",
       description: "Protect your equipment from voltage surges and spikes",
     },
     {
       id: 3,
       title: "Chemical Earthing Solution",
       image: "/images/earthing.jpg",
+      fallback: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80",
       description: "Low resistance earthing systems for optimal safety",
     },
     {
       id: 4,
       title: "Online UPS",
       image: "/images/ups.jpg",
+      fallback: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&q=80",
       description: "Uninterrupted power supply for critical operations",
     },
     {
       id: 5,
       title: "Servo Stabilizer",
       image: "/images/servo.jpg",
+      fallback: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80",
       description: "Voltage regulation for sensitive equipment protection",
     },
     {
       id: 6,
       title: "Lithium Ion Batteries",
       image: "/images/battery.jpg",
+      fallback: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&q=80",
       description: "High-efficiency energy storage solutions",
     },
     {
       id: 7,
       title: "Solar EPC & BOS",
       image: "/images/solar.jpg",
+      fallback: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80",
       description: "Complete solar engineering, procurement & construction",
     },
     {
       id: 8,
       title: "Power Quality Audit",
       image: "/images/audit.jpg",
+      fallback: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
       description: "Comprehensive power system analysis and optimization",
     },
   ];
@@ -79,8 +117,9 @@ export default function ServicesPage() {
             >
               {/* Image Area */}
               <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
+                <ImageWithFallback
                   src={service.image}
+                  fallbackSrc={service.fallback}
                   alt={service.title}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-300"
