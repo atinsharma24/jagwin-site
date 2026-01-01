@@ -59,13 +59,13 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="relative h-12 w-auto">
+            <div className="dark:bg-white dark:px-2 dark:py-1 dark:rounded-md dark:shadow-sm transition-all">
               <Image
                 src="/images/logo.png"
                 alt="Jagwin Enterprises LLP"
                 width={120}
                 height={48}
-                className="h-12 w-auto object-contain dark:brightness-0 dark:invert transition-all"
+                className="h-12 w-auto object-contain"
                 priority
               />
             </div>

@@ -27,7 +27,7 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className="mb-4">
-              <div className="relative h-14 w-auto inline-block bg-white/95 rounded-md px-3 py-2">
+              <div className="dark:bg-white dark:px-3 dark:py-2 dark:rounded-md dark:shadow-sm inline-block transition-all">
                 <Image
                   src="/images/logo.png"
                   alt="Jagwin Enterprises LLP"
