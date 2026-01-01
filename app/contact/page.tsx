@@ -41,7 +41,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="pt-20 min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="pt-20 min-h-screen bg-slate-50 dark:bg-gray-900">
       {/* Page Header */}
       <section className="bg-white dark:bg-dark-bg border-b border-gray-200 dark:border-gray-800 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -128,8 +128,8 @@ export default function ContactPage() {
             </div>
 
             {/* Map Placeholder */}
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <div className="w-full h-64 bg-gray-300 dark:bg-gray-700 flex items-center justify-center">
+            <div className="rounded-2xl overflow-hidden shadow-md">
+              <div className="w-full h-64 bg-slate-200 dark:bg-gray-700 shadow-inner flex items-center justify-center">
                 <div className="text-center">
                   <MapPin className="w-12 h-12 text-gray-500 dark:text-gray-400 mx-auto mb-2" />
                   <p className="font-body text-gray-600 dark:text-gray-300">
@@ -145,7 +145,7 @@ export default function ContactPage() {
 
           {/* Right Column - Inquiry Form */}
           <div>
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-8">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-8">
               <h2 className="font-heading font-bold text-2xl text-gray-900 dark:text-white mb-6">
                 Send us a Message
               </h2>
@@ -166,7 +166,7 @@ export default function ContactPage() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white font-body transition-all"
+                    className="w-full px-4 py-3 border border-transparent rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-slate-50 focus:bg-white dark:bg-gray-700 text-slate-900 dark:text-white font-body transition-all"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -186,7 +186,7 @@ export default function ContactPage() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white font-body transition-all"
+                    className="w-full px-4 py-3 border border-transparent rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-slate-50 focus:bg-white dark:bg-gray-700 text-slate-900 dark:text-white font-body transition-all"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -206,7 +206,7 @@ export default function ContactPage() {
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white font-body transition-all"
+                    className="w-full px-4 py-3 border border-transparent rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-slate-50 focus:bg-white dark:bg-gray-700 text-slate-900 dark:text-white font-body transition-all"
                     placeholder="+91 XXXXXXXXXX"
                   />
                 </div>
@@ -225,7 +225,7 @@ export default function ContactPage() {
                     required
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white font-body transition-all"
+                    className="w-full px-4 py-3 border border-transparent rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-slate-50 focus:bg-white dark:bg-gray-700 text-slate-900 dark:text-white font-body transition-all"
                   >
                     <option value="">Select a service...</option>
                     {services.map((service) => (
@@ -251,7 +251,7 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white font-body transition-all resize-none"
+                    className="w-full px-4 py-3 border border-transparent rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-slate-50 focus:bg-white dark:bg-gray-700 text-slate-900 dark:text-white font-body transition-all resize-none"
                     placeholder="Tell us about your project requirements..."
                   />
                 </div>

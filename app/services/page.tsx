@@ -55,7 +55,7 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="pt-20 min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="pt-20 min-h-screen bg-slate-50 dark:bg-gray-900">
       {/* Page Header */}
       <section className="bg-white dark:bg-dark-bg border-b border-gray-200 dark:border-gray-800 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -75,7 +75,7 @@ export default function ServicesPage() {
           {services.map((service) => (
             <div
               key={service.id}
-              className="group bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
+              className="group bg-white dark:bg-gray-800 border border-slate-100 dark:border-gray-700 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
               {/* Image Area */}
               <div className="relative aspect-[4/3] overflow-hidden">
