@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-heading: var(--font-league-spartan);
+    --font-body: var(--font-open-sans);
+    --font-slogan: var(--font-dancing-script);
+  }
+
+  body {
+    @apply font-body bg-white dark:bg-dark-bg text-gray-900 dark:text-white transition-colors;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

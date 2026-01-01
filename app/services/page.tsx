@@ -1,0 +1,123 @@
+import Link from "next/link";
+import Image from "next/image";
+import { Handshake } from "lucide-react";
+
+export default function ServicesPage() {
+  const services = [
+    {
+      id: 1,
+      title: "Lightning Protection System",
+      image: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&q=80",
+      description: "Advanced lightning protection for complete facility safety",
+    },
+    {
+      id: 2,
+      title: "Surge Protection Device",
+      image: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&q=80",
+      description: "Protect your equipment from voltage surges and spikes",
+    },
+    {
+      id: 3,
+      title: "Chemical Earthing Solution",
+      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80",
+      description: "Low resistance earthing systems for optimal safety",
+    },
+    {
+      id: 4,
+      title: "Online UPS",
+      image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&q=80",
+      description: "Uninterrupted power supply for critical operations",
+    },
+    {
+      id: 5,
+      title: "Servo Stabilizer",
+      image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80",
+      description: "Voltage regulation for sensitive equipment protection",
+    },
+    {
+      id: 6,
+      title: "Lithium Ion Batteries",
+      image: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&q=80",
+      description: "High-efficiency energy storage solutions",
+    },
+    {
+      id: 7,
+      title: "Solar EPC & BOS",
+      image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80",
+      description: "Complete solar engineering, procurement & construction",
+    },
+    {
+      id: 8,
+      title: "Power Quality Audit",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
+      description: "Comprehensive power system analysis and optimization",
+    },
+  ];
+
+  return (
+    <div className="pt-20 min-h-screen bg-gray-50 dark:bg-gray-900">
+      {/* Page Header */}
+      <section className="bg-white dark:bg-dark-bg border-b border-gray-200 dark:border-gray-800 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="font-heading font-bold text-4xl md:text-5xl text-gray-900 dark:text-white mb-4">
+            Our Services
+          </h1>
+          <p className="font-body text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Comprehensive electrical safety and power solutions designed for industrial and commercial excellence
+          </p>
+        </div>
+      </section>
+
+      {/* Services Grid - 3x3 */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Service Cards (1-8) */}
+          {services.map((service) => (
+            <div
+              key={service.id}
+              className="group bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
+            >
+              {/* Image Area */}
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+
+              {/* Orange Title Bar */}
+              <div className="bg-primary p-4">
+                <h3 className="font-heading font-bold text-white text-lg text-center">
+                  {service.title}
+                </h3>
+              </div>
+
+              {/* Description */}
+              <div className="p-4">
+                <p className="font-body text-gray-600 dark:text-gray-300 text-sm text-center">
+                  {service.description}
+                </p>
+              </div>
+            </div>
+          ))}
+
+          {/* CTA Card - 9th Item */}
+          <Link
+            href="/contact"
+            className="group bg-primary rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 flex flex-col items-center justify-center p-12 min-h-[300px]"
+          >
+            <Handshake className="w-24 h-24 text-white mb-6 group-hover:scale-110 transition-transform" />
+            <h3 className="font-heading font-bold text-white text-3xl text-center">
+              GET A QUOTE
+            </h3>
+            <p className="font-body text-white/90 text-center mt-4">
+              Let's discuss your project requirements
+            </p>
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+}
