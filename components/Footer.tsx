@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 export default function Footer() {
@@ -25,13 +26,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-heading font-bold text-lg">JE</span>
+            <div className="mb-4">
+              <div className="relative h-14 w-auto inline-block bg-white/95 rounded-md px-3 py-2">
+                <Image
+                  src="/images/logo.png"
+                  alt="Jagwin Enterprises LLP"
+                  width={140}
+                  height={56}
+                  className="h-14 w-auto object-contain"
+                />
               </div>
-              <span className="font-heading text-lg font-bold text-white">
-                Jagwin Enterprises
-              </span>
             </div>
             <p className="text-sm text-gray-400 font-body mb-4">
               Complete Electrical Safety & Power Solutions for Industrial and Commercial Applications.

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Moon, Sun, Phone, Menu, X } from "lucide-react";
 
 export default function Navbar() {
@@ -58,16 +59,15 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform">
-              <span className="text-white font-heading font-bold text-xl">JE</span>
-            </div>
-            <div className="hidden sm:block">
-              <span className="font-heading text-xl font-bold text-gray-900 dark:text-white">
-                Jagwin Enterprises
-              </span>
-              <span className="block text-xs text-gray-600 dark:text-gray-400 font-body">
-                LLP
-              </span>
+            <div className="relative h-12 w-auto">
+              <Image
+                src="/images/logo.png"
+                alt="Jagwin Enterprises LLP"
+                width={120}
+                height={48}
+                className="h-12 w-auto object-contain dark:brightness-0 dark:invert transition-all"
+                priority
+              />
             </div>
           </Link>
 

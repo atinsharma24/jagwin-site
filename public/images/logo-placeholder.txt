@@ -1,0 +1,4 @@
+# Logo Placeholder
+# Replace this file with your actual company logo (logo.png)
+# Recommended size: 400x160 pixels or similar aspect ratio
+# Format: PNG with transparent background preferred
