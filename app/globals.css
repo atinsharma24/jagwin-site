@@ -10,7 +10,11 @@
   }
 
   body {
-    @apply font-body bg-slate-50 dark:bg-dark-bg text-gray-900 dark:text-white transition-colors;
+    @apply bg-slate-50 text-slate-900 font-body;
+  }
+
+  body.dark {
+    @apply bg-dark-bg text-white;
   }
 
   h1, h2, h3, h4, h5, h6 {
