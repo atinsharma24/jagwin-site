@@ -5,12 +5,13 @@ import Image from "next/image";
 import { Handshake } from "lucide-react";
 import { useState } from "react";
 
-// Image fallback component
+// Image fallback component with improved error handling
 function ImageWithFallback({
   src,
   fallbackSrc,
   alt,
-  ...props
+  fill,
+  className,
 }: {
   src: string;
   fallbackSrc: string;
@@ -18,16 +19,22 @@ function ImageWithFallback({
   fill?: boolean;
   className?: string;
 }) {
-  const [imgSrc, setImgSrc] = useState(src);
+  const [imgSrc, setImgSrc] = useState(fallbackSrc); // Start with fallback
+  const [isLoaded, setIsLoaded] = useState(false);
 
   return (
     <Image
-      {...props}
       src={imgSrc}
       alt={alt}
+      fill={fill}
+      className={className}
       onError={() => {
-        setImgSrc(fallbackSrc);
+        if (imgSrc !== fallbackSrc) {
+          setImgSrc(fallbackSrc);
+        }
       }}
+      onLoad={() => setIsLoaded(true)}
+      priority={false}
     />
   );
 }

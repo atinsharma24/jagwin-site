@@ -1,1 +1,1 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/home/atinsharma/Documents/Chacha/jagwin/app/layout\":[\"static/media/0e9d289c6eb42bf7-s.p.woff2\",\"static/media/c441a7a257a6e5bf-s.p.woff2\",\"static/media/e807dee2426166ad-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{},\"appUsingSizeAdjust\":false,\"pagesUsingSizeAdjust\":false}"
