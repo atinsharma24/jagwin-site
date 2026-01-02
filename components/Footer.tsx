@@ -11,12 +11,14 @@ export default function Footer() {
   ];
 
   const services = [
-    "Lightning Protection System",
-    "Surge Protection Device",
-    "Chemical Earthing Solution",
-    "Online UPS",
-    "Servo Stabilizer",
+    "Lightning Protection System (LPS)",
+    "Surge Protection Devices (SPD)",
+    "Chemical Earthing Solutions",
+    "Online UPS & SMF Batteries",
+    "Servo Stabilizers",
     "Lithium Ion Batteries",
+    "Solar EPC & BOS Kit",
+    "Power Quality Audit (PQA)",
   ];
 
   return (
@@ -84,11 +86,11 @@ export default function Footer() {
               </a>
 
               <a
-                href="mailto:jagwin.ent@gmail.com"
+                href="mailto:info@jagwin.in"
                 className="flex items-start space-x-3 text-sm font-body text-gray-400 hover:text-primary transition-all duration-300 group"
               >
                 <Mail className="w-5 h-5 mt-0.5 flex-shrink-0 group-hover:text-primary" />
-                <span>jagwin.ent@gmail.com</span>
+                <span>info@jagwin.in</span>
               </a>
 
               <div className="flex items-start space-x-3 text-sm font-body text-gray-400">

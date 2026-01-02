@@ -29,24 +29,23 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://jagwin-site.vercel.app"),
   title: "Jagwin Enterprises LLP | Electrical Safety Solutions",
   description:
-    "Complete Electrical Safety Solutions including Lightning Protection System, Surge Protection Device, Chemical Earthing Solution, Online UPS, Servo Stabilizer, Lithium Ion Batteries, Solar EPC & BOS, and Power Quality Audit.",
+    "Complete Electrical Safety Solutions including Lightning Protection System (LPS), Surge Protection Devices (SPD), Chemical Earthing Solutions, Online UPS & SMF Batteries, Servo Stabilizers, Lithium Ion Batteries, Solar EPC & BOS Kit, and Power Quality Audit (PQA).",
   keywords: [
     "Jagwin Enterprises LLP",
     "Electrical Safety Solutions",
-    "Lightning Protection System",
-    "Surge Protection Device",
-    "Chemical Earthing Solution",
-    "Online UPS",
-    "Servo Stabilizer",
+    "Lightning Protection System (LPS)",
+    "Surge Protection Devices (SPD)",
+    "Chemical Earthing Solutions",
+    "Online UPS & SMF Batteries",
+    "Servo Stabilizers",
     "Lithium Ion Batteries",
-    "Solar EPC",
-    "BOS",
-    "Power Quality Audit",
+    "Solar EPC & BOS Kit",
+    "Power Quality Audit (PQA)",
   ],
   openGraph: {
     title: "Jagwin Enterprises LLP | Electrical Safety Solutions",
     description:
-      "Complete Electrical Safety Solutions including Lightning Protection System, Surge Protection Device, Chemical Earthing Solution, Online UPS, Servo Stabilizer, Lithium Ion Batteries, Solar EPC & BOS, and Power Quality Audit.",
+      "Complete Electrical Safety Solutions including Lightning Protection System (LPS), Surge Protection Devices (SPD), Chemical Earthing Solutions, Online UPS & SMF Batteries, Servo Stabilizers, Lithium Ion Batteries, Solar EPC & BOS Kit, and Power Quality Audit (PQA).",
     url: "https://jagwin-site.vercel.app/",
     siteName: "Jagwin Enterprises LLP",
     images: [
@@ -64,7 +63,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Jagwin Enterprises LLP | Electrical Safety Solutions",
     description:
-      "Complete Electrical Safety Solutions including Lightning Protection System, Surge Protection Device, Chemical Earthing Solution, Online UPS, Servo Stabilizer, Lithium Ion Batteries, Solar EPC & BOS, and Power Quality Audit.",
+      "Complete Electrical Safety Solutions including Lightning Protection System (LPS), Surge Protection Devices (SPD), Chemical Earthing Solutions, Online UPS & SMF Batteries, Servo Stabilizers, Lithium Ion Batteries, Solar EPC & BOS Kit, and Power Quality Audit (PQA).",
     images: ["/images/thumbnail.png"],
   },
 };

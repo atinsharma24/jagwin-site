@@ -70,57 +70,65 @@ export default function ServicesPage() {
   const services = [
     {
       id: 1,
-      title: "Lightning Protection System",
-      image: "/images/lightning.jpg",
+      title: "Lightning Protection System (LPS)",
+      image:
+        "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
       fallbackKey: "lightning" as const,
       description: "Advanced lightning protection for complete facility safety",
     },
     {
       id: 2,
-      title: "Surge Protection Device",
-      image: "/images/surge.jpg",
+      title: "Surge Protection Devices (SPD)",
+      image:
+        "https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1200&q=80",
       fallbackKey: "surge" as const,
       description: "Protect your equipment from voltage surges and spikes",
     },
     {
       id: 3,
-      title: "Chemical Earthing Solution",
-      image: "/images/earthing.jpg",
+      title: "Chemical Earthing Solutions",
+      image:
+        "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=80",
       fallbackKey: "earthing" as const,
       description: "Low resistance earthing systems for optimal safety",
     },
     {
       id: 4,
-      title: "Online UPS",
-      image: "/images/ups.jpg",
+      title: "Online UPS & SMF Batteries",
+      image:
+        "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&w=1200&q=80",
       fallbackKey: "ups" as const,
-      description: "Uninterrupted power supply for critical operations",
+      description: "Reliable backup power and battery solutions for critical loads",
     },
     {
       id: 5,
-      title: "Servo Stabilizer",
-      image: "/images/servo.jpg",
+      title: "Servo Stabilizers",
+      image:
+        "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1200&q=80",
       fallbackKey: "stabilizer" as const,
       description: "Voltage regulation for sensitive equipment protection",
     },
     {
       id: 6,
       title: "Lithium Ion Batteries",
-      image: "/images/battery.jpg",
+      image:
+        "https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=1200&q=80",
       fallbackKey: "battery" as const,
       description: "High-efficiency energy storage solutions",
     },
     {
       id: 7,
-      title: "Solar EPC & BOS",
-      image: "/images/solar.jpg",
+      title: "Solar EPC & BOS Kit",
+      image:
+        "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=80",
       fallbackKey: "solar" as const,
       description: "Complete solar engineering, procurement & construction",
     },
     {
       id: 8,
-      title: "Power Quality Audit",
-      image: "/images/audit.jpg",
+      title: "Power Quality Audit (PQA)",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
       fallbackKey: "audit" as const,
       description: "Comprehensive power system analysis and optimization",
     },
