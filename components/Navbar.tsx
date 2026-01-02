@@ -49,7 +49,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-brand-line/40 dark:bg-slate-900/90 dark:border-gray-800 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-md border-b border-gray-200 dark:bg-slate-900/90 dark:border-gray-800 ${
         scrolled ? "shadow-md" : ""
       }`}
     >
@@ -57,7 +57,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="inline-block rounded-md px-2 py-1 bg-brand-paper/90 border border-brand-line/40 shadow-sm transition-transform duration-300 group-hover:-translate-y-0.5 motion-reduce:transform-none dark:bg-white/95 dark:border-white/10 dark:shadow-none">
+            <div className="inline-block rounded-md px-2 py-1 bg-gray-50/90 border border-gray-200/80 shadow-sm transition-transform duration-300 group-hover:-translate-y-0.5 motion-reduce:transform-none dark:bg-white/95 dark:border-white/10 dark:shadow-none">
               <Image
                 src="/images/logo.png"
                 alt="Jagwin Logo"
@@ -75,7 +75,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-body text-brand-ink/80 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors relative group"
+                className="font-body text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors relative group"
               >
                 {link.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
@@ -88,20 +88,20 @@ export default function Navbar() {
             {/* Dark Mode Toggle */}
             <button
               onClick={toggleDarkMode}
-              className="p-2 rounded-lg bg-brand-paper dark:bg-gray-800 hover:bg-white dark:hover:bg-gray-700 transition-colors"
+              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
               aria-label="Toggle dark mode"
             >
               {darkMode ? (
                 <Sun className="w-5 h-5 text-yellow-500" />
               ) : (
-                <Moon className="w-5 h-5 text-brand-ink/70" />
+                <Moon className="w-5 h-5 text-gray-700" />
               )}
             </button>
 
             {/* Call Now Button - Desktop */}
             <a
               href="tel:+917217674750"
-              className="hidden md:flex items-center space-x-2 bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-body font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none"
+              className="hidden md:flex items-center space-x-2 bg-primary hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-body font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none"
             >
               <Phone className="w-5 h-5" />
               <span>Call Now</span>
@@ -110,7 +110,7 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg bg-brand-paper dark:bg-gray-800 hover:bg-white dark:hover:bg-gray-700 transition-colors"
+              className="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
@@ -124,21 +124,21 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden pb-4 border-t border-brand-line/30 dark:border-gray-700 mt-2">
+          <div className="md:hidden pb-4 border-t dark:border-gray-700 mt-2">
             <div className="flex flex-col space-y-4 pt-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="font-body text-brand-ink/80 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors px-2 py-2"
+                  className="font-body text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors px-2 py-2"
                 >
                   {link.label}
                 </Link>
               ))}
               <a
                 href="tel:+917217674750"
-                className="flex items-center justify-center space-x-2 bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-lg font-body font-semibold transition-all"
+                className="flex items-center justify-center space-x-2 bg-primary hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-body font-semibold transition-all"
               >
                 <Phone className="w-5 h-5" />
                 <span>Call Now</span>

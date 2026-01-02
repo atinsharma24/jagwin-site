@@ -20,7 +20,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-brand-paper dark:bg-black text-brand-ink/70 dark:text-gray-300 border-t border-brand-line/30 dark:border-gray-800">
+    <footer className="bg-gray-900 dark:bg-black text-gray-300">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -37,20 +37,20 @@ export default function Footer() {
                 />
               </div>
             </div>
-            <p className="text-sm text-brand-ink/60 font-body mb-4">
+            <p className="text-sm text-gray-400 font-body mb-4">
               Complete Electrical Safety & Power Solutions for Industrial and Commercial Applications.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-heading text-brand-ink dark:text-white font-bold mb-4">Quick Links</h3>
+            <h3 className="font-heading text-white font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="inline-flex text-sm font-body text-brand-ink/60 hover:text-primary transition-all duration-300 hover:translate-x-1 motion-reduce:transform-none"
+                    className="inline-flex text-sm font-body text-gray-400 hover:text-primary transition-all duration-300 hover:translate-x-1 motion-reduce:transform-none"
                   >
                     {link.label}
                   </Link>
@@ -61,10 +61,10 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-heading text-brand-ink dark:text-white font-bold mb-4">Our Services</h3>
+            <h3 className="font-heading text-white font-bold mb-4">Our Services</h3>
             <ul className="space-y-2">
               {services.map((service) => (
-                <li key={service} className="text-sm font-body text-brand-ink/60">
+                <li key={service} className="text-sm font-body text-gray-400">
                   {service}
                 </li>
               ))}
@@ -73,11 +73,11 @@ export default function Footer() {
 
           {/* Contact Information */}
           <div>
-            <h3 className="font-heading text-brand-ink dark:text-white font-bold mb-4">Contact Us</h3>
+            <h3 className="font-heading text-white font-bold mb-4">Contact Us</h3>
             <div className="space-y-3">
               <a
                 href="tel:+917217674750"
-                className="flex items-start space-x-3 text-sm font-body text-brand-ink/60 hover:text-primary transition-all duration-300 group"
+                className="flex items-start space-x-3 text-sm font-body text-gray-400 hover:text-primary transition-all duration-300 group"
               >
                 <Phone className="w-5 h-5 mt-0.5 flex-shrink-0 group-hover:text-primary" />
                 <span>+91 7217674750</span>
@@ -85,13 +85,13 @@ export default function Footer() {
 
               <a
                 href="mailto:jagwin.ent@gmail.com"
-                className="flex items-start space-x-3 text-sm font-body text-brand-ink/60 hover:text-primary transition-all duration-300 group"
+                className="flex items-start space-x-3 text-sm font-body text-gray-400 hover:text-primary transition-all duration-300 group"
               >
                 <Mail className="w-5 h-5 mt-0.5 flex-shrink-0 group-hover:text-primary" />
                 <span>jagwin.ent@gmail.com</span>
               </a>
 
-              <div className="flex items-start space-x-3 text-sm font-body text-brand-ink/60">
+              <div className="flex items-start space-x-3 text-sm font-body text-gray-400">
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0 text-primary" />
                 <span>
                   A-401, 4th Floor, Plot No.1,
@@ -107,7 +107,7 @@ export default function Footer() {
       </div>
 
       {/* Slogan Strip - Orange Background */}
-      <div className="bg-primary py-4 border-t border-brand-line/30 dark:border-gray-800">
+      <div className="bg-primary py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center font-slogan text-xl sm:text-2xl text-white">
             Electrifying{" "}
@@ -119,9 +119,9 @@ export default function Footer() {
       </div>
 
       {/* Copyright Bar */}
-      <div className="bg-white dark:bg-black border-t border-brand-line/30 dark:border-gray-800 py-4">
+      <div className="bg-gray-950 dark:bg-black border-t border-gray-800 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-sm font-body text-brand-ink/60">
+          <p className="text-center text-sm font-body text-gray-500">
             © {new Date().getFullYear()} Jagwin Enterprises LLP. All rights reserved.
           </p>
         </div>

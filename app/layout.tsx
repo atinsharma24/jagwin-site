@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { League_Spartan, Open_Sans, Dancing_Script } from "next/font/google";
-// @ts-ignore - allow importing global CSS without type declarations
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -60,7 +59,7 @@ export const metadata: Metadata = {
     ],
     locale: "en_IN",
     type: "website",
-  }, // @ts-ignore - allow im
+  },
   twitter: {
     card: "summary_large_image",
     title: "Jagwin Enterprises LLP | Electrical Safety Solutions",
@@ -78,7 +77,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${leagueSpartan.variable} ${openSans.variable} ${dancingScript.variable} antialiased bg-brand-paper text-brand-ink`}
+        className={`${leagueSpartan.variable} ${openSans.variable} ${dancingScript.variable} antialiased bg-gray-100 text-slate-900`}
       >
         <Navbar />
         <main className="min-h-screen">{children}</main>
