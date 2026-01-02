@@ -26,6 +26,7 @@ const dancingScript = Dancing_Script({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://jagwin.in"),
   title: "Jagwin Enterprises LLP - Electrical Safety & Power Solutions",
   description:
     "Complete Electrical Safety & Power Solutions. Lightning Protection, Surge Protection, Earthing Solutions, UPS, Stabilizers, Solar EPC & Power Quality Audit.",
@@ -38,6 +39,29 @@ export const metadata: Metadata = {
     "Solar EPC",
     "Power Quality Audit",
   ],
+  openGraph: {
+    title: "Jagwin Enterprises LLP - Electrical Safety & Power Solutions",
+    description:
+      "Complete Electrical Safety & Power Solutions. Lightning Protection, Surge Protection, Earthing Solutions, UPS, Stabilizers, Solar EPC & Power Quality Audit.",
+    url: "https://jagwin.in",
+    siteName: "Jagwin Enterprises LLP",
+    images: [
+      {
+        url: "/images/thumbnail.png",
+        width: 1200,
+        height: 630,
+        alt: "Jagwin Enterprises - Electrical Safety & Power Solutions",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jagwin Enterprises LLP - Electrical Safety & Power Solutions",
+    description:
+      "Complete Electrical Safety & Power Solutions. Lightning Protection, Surge Protection, Earthing Solutions, UPS, Stabilizers, Solar EPC & Power Quality Audit.",
+    images: ["/images/thumbnail.png"],
+  },
 };
 
 export default function RootLayout({
