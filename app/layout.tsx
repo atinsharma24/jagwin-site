@@ -26,7 +26,7 @@ const dancingScript = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jagwin.in"),
+  metadataBase: new URL("https://jagwin-site.vercel.app"),
   title: "Jagwin Enterprises LLP - Electrical Safety & Power Solutions",
   description:
     "Complete Electrical Safety & Power Solutions. Lightning Protection, Surge Protection, Earthing Solutions, UPS, Stabilizers, Solar EPC & Power Quality Audit.",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Jagwin Enterprises LLP - Electrical Safety & Power Solutions",
     description:
       "Complete Electrical Safety & Power Solutions. Lightning Protection, Surge Protection, Earthing Solutions, UPS, Stabilizers, Solar EPC & Power Quality Audit.",
-    url: "https://jagwin.in",
+    url: "https://jagwin-site.vercel.app",
     siteName: "Jagwin Enterprises LLP",
     images: [
       {
