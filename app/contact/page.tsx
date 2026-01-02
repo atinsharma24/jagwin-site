@@ -91,7 +91,7 @@ export default function ContactPage() {
 
               {/* Email */}
               <a
-                href="mailto:jagwin.ent@gmail.com"
+                href="mailto:info@jagwin.in"
                 className="flex items-start space-x-4 p-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none group"
               >
                 <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
@@ -102,7 +102,7 @@ export default function ContactPage() {
                     Email
                   </h3>
                   <p className="font-body text-gray-600 dark:text-gray-300 group-hover:text-primary transition-colors">
-                    jagwin.ent@gmail.com
+                    info@jagwin.in
                   </p>
                 </div>
               </a>
