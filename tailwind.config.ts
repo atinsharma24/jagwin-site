@@ -11,8 +11,15 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#F07C00",
-          orange: "#F07C00",
+          // Brochure-style orange
+          DEFAULT: "#E9821E",
+          orange: "#E9821E",
+        },
+        brand: {
+          // Brochure-style neutrals
+          paper: "#FAFAFA",
+          ink: "#111111",
+          line: "#7A7A7A",
         },
         dark: {
           bg: "#111827",

@@ -23,33 +23,33 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="pt-20 min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div className="pt-20 min-h-screen bg-brand-paper dark:bg-gray-900">
       {/* Page Header */}
-      <section className="bg-white dark:bg-dark-bg border-b border-gray-200 dark:border-gray-800 py-16">
+      <section className="bg-white dark:bg-dark-bg border-b border-brand-line/30 dark:border-gray-800 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-heading font-bold text-4xl md:text-5xl text-gray-900 dark:text-white mb-6 animate-fade-down motion-reduce:animate-none">
+          <h1 className="font-heading font-bold text-4xl md:text-5xl text-brand-ink dark:text-white mb-6 animate-fade-down motion-reduce:animate-none">
             About Jagwin Enterprises LLP
           </h1>
-          <p className="font-body text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto animate-fade-up motion-reduce:animate-none [animation-delay:120ms]">
+          <p className="font-body text-lg text-brand-ink/70 dark:text-gray-300 max-w-3xl mx-auto animate-fade-up motion-reduce:animate-none [animation-delay:120ms]">
             Leading the industry in electrical safety and power solutions since inception
           </p>
         </div>
       </section>
 
       {/* Mission Section */}
-      <section className="bg-gradient-to-br from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900 py-16">
+      <section className="bg-gradient-to-br from-brand-paper to-white dark:from-gray-800 dark:to-gray-900 py-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-6">
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-brand-ink dark:text-white mb-6">
               Our Mission
             </h2>
-            <p className="font-slogan text-3xl md:text-4xl lg:text-5xl text-gray-800 dark:text-gray-100 mb-8">
+            <p className="font-slogan text-3xl md:text-4xl lg:text-5xl text-brand-ink/90 dark:text-gray-100 mb-8">
               Electrifying{" "}
               <span className="text-primary font-bold">Safety</span>,
               <br className="sm:hidden" /> Illuminating{" "}
               <span className="text-primary font-bold">Protection</span>
             </p>
-            <div className="max-w-3xl mx-auto space-y-4 font-body text-lg text-gray-700 dark:text-gray-300">
+            <div className="max-w-3xl mx-auto space-y-4 font-body text-lg text-brand-ink/70 dark:text-gray-300">
               <p>
                 At Jagwin Enterprises LLP, we are committed to delivering
                 comprehensive electrical safety and power solutions that protect
@@ -73,11 +73,11 @@ export default function AboutPage() {
       {/* Leadership Section */}
       <section className="bg-white dark:bg-dark-bg py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-bold text-3xl text-center text-gray-900 dark:text-white mb-12">
+          <h2 className="font-heading font-bold text-3xl text-center text-brand-ink dark:text-white mb-12">
             Leadership
           </h2>
 
-          <div className="bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-2xl shadow-xl p-8 md:p-12">
+          <div className="bg-gradient-to-br from-brand-paper to-white dark:from-gray-800 dark:to-gray-900 rounded-2xl shadow-xl p-8 md:p-12">
             <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
               {/* Profile Image Placeholder */}
               <div className="flex-shrink-0">
@@ -88,13 +88,13 @@ export default function AboutPage() {
 
               {/* Profile Info */}
               <div className="flex-1 text-center md:text-left">
-                <h3 className="font-heading font-bold text-2xl text-gray-900 dark:text-white mb-2">
+                <h3 className="font-heading font-bold text-2xl text-brand-ink dark:text-white mb-2">
                   Vishal Sharma
                 </h3>
                 <p className="font-body text-primary font-semibold text-lg mb-4">
                   Project Head
                 </p>
-                <p className="font-body text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p className="font-body text-brand-ink/70 dark:text-gray-300 leading-relaxed">
                   Leading Jagwin Enterprises with a vision for excellence in
                   electrical safety and power solutions. With extensive
                   experience in project management and technical expertise,
@@ -110,9 +110,9 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="bg-gray-50 dark:bg-gray-900 py-16">
+      <section className="bg-brand-paper dark:bg-gray-900 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-heading font-bold text-3xl text-center text-gray-900 dark:text-white mb-12">
+          <h2 className="font-heading font-bold text-3xl text-center text-brand-ink dark:text-white mb-12">
             Why Choose Us
           </h2>
 
@@ -127,10 +127,10 @@ export default function AboutPage() {
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                     <Icon className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="font-heading font-bold text-xl text-gray-900 dark:text-white mb-4">
+                  <h3 className="font-heading font-bold text-xl text-brand-ink dark:text-white mb-4">
                     {feature.title}
                   </h3>
-                  <p className="font-body text-gray-600 dark:text-gray-300">
+                  <p className="font-body text-brand-ink/70 dark:text-gray-300">
                     {feature.description}
                   </p>
                 </div>
@@ -152,7 +152,7 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="/contact"
-              className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-gray-100 text-primary font-body font-semibold text-lg rounded-lg shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none"
+              className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-brand-paper text-primary font-body font-semibold text-lg rounded-lg shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none"
             >
               Get in Touch
             </a>

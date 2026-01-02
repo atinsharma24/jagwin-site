@@ -40,25 +40,24 @@ function ServiceCard({
   const [src, setSrc] = useState(service.image);
 
   return (
-    <div className="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-2xl hover:border-orange-200 transition-all duration-300 hover:-translate-y-1 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none">
-      <div className="relative aspect-[4/3] overflow-hidden">
+    <div className="group bg-white dark:bg-gray-800 border-2 border-brand-line/60 dark:border-gray-700 rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none">
+      <div className="relative aspect-[4/3] overflow-hidden p-4">
         <Image
           src={src}
           alt={service.title}
           fill
-          className="object-cover group-hover:scale-110 transition-transform duration-300"
+          className="object-cover rounded-2xl group-hover:scale-105 transition-transform duration-300"
           onError={() => setSrc(FALLBACK_IMAGES[service.fallbackKey])}
         />
       </div>
 
-      <div className="bg-primary p-4">
-        <h3 className="font-heading font-bold text-white text-lg text-center">
-          {service.title}
-        </h3>
-      </div>
-
-      <div className="p-4">
-        <p className="font-body text-gray-600 dark:text-gray-300 text-sm text-center">
+      <div className="px-5 pb-5">
+        <div className="bg-primary text-white rounded-full py-3 px-4 shadow-sm">
+          <h3 className="font-heading font-bold text-sm sm:text-base text-center">
+            {service.title}
+          </h3>
+        </div>
+        <p className="mt-4 font-body text-brand-ink/70 dark:text-gray-300 text-sm text-center">
           {service.description}
         </p>
       </div>
@@ -127,14 +126,14 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="pt-20 min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div className="pt-20 min-h-screen bg-brand-paper dark:bg-gray-900">
       {/* Page Header */}
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-heading font-bold text-4xl md:text-5xl text-gray-900 dark:text-white mb-4 animate-fade-down motion-reduce:animate-none">
+          <h1 className="font-heading font-bold text-4xl md:text-5xl text-brand-ink dark:text-white mb-4 animate-fade-down motion-reduce:animate-none">
             Our Services
           </h1>
-          <p className="font-body text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto animate-fade-up motion-reduce:animate-none [animation-delay:120ms]">
+          <p className="font-body text-lg text-brand-ink/70 dark:text-gray-300 max-w-3xl mx-auto animate-fade-up motion-reduce:animate-none [animation-delay:120ms]">
             Comprehensive electrical safety and power solutions designed for industrial and commercial excellence
           </p>
         </div>
@@ -151,13 +150,13 @@ export default function ServicesPage() {
           {/* CTA Card - 9th Item */}
           <Link
             href="/contact"
-            className="group bg-primary rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none flex flex-col items-center justify-center p-12 min-h-[300px]"
+            className="group bg-white dark:bg-gray-800 border-2 border-brand-line/60 dark:border-gray-700 rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none flex flex-col items-center justify-center p-10 min-h-[300px]"
           >
-            <Handshake className="w-24 h-24 text-white mb-6 group-hover:scale-110 transition-transform" />
-            <h3 className="font-heading font-bold text-white text-3xl text-center">
-              GET A QUOTE
-            </h3>
-            <p className="font-body text-white/90 text-center mt-4">
+            <Handshake className="w-20 h-20 text-primary mb-6 group-hover:scale-110 transition-transform" />
+            <div className="bg-primary text-white rounded-full py-3 px-8 shadow-sm">
+              <h3 className="font-heading font-bold text-lg text-center">GET A QUOTE</h3>
+            </div>
+            <p className="font-body text-brand-ink/70 dark:text-gray-300 text-center mt-5">
               Let's discuss your project requirements
             </p>
           </Link>
