@@ -70,14 +70,14 @@ export default function ServicesPage() {
   const services = [
     {
       id: 1,
-      title: "Lightning Protection System",
+      title: "Lightning Protection System (LPS)",
       image: "/images/lightning.jpg",
       fallbackKey: "lightning" as const,
       description: "Advanced lightning protection for complete facility safety",
     },
     {
       id: 2,
-      title: "Surge Protection Device",
+      title: "Surge Protection Device (SPD)",
       image: "/images/surge.jpg",
       fallbackKey: "surge" as const,
       description: "Protect your equipment from voltage surges and spikes",
@@ -91,7 +91,7 @@ export default function ServicesPage() {
     },
     {
       id: 4,
-      title: "Online UPS",
+      title: "Online UPS & SMF Batteries",
       image: "/images/ups.jpg",
       fallbackKey: "ups" as const,
       description: "Uninterrupted power supply for critical operations",
@@ -112,14 +112,14 @@ export default function ServicesPage() {
     },
     {
       id: 7,
-      title: "Solar EPC & BOS",
+      title: "Solar EPC & BOS Kit",
       image: "/images/solar.jpg",
       fallbackKey: "solar" as const,
       description: "Complete solar engineering, procurement & construction",
     },
     {
       id: 8,
-      title: "Power Quality Audit",
+      title: "Power Quality Audit (PQA)",
       image: "/images/audit.jpg",
       fallbackKey: "audit" as const,
       description: "Comprehensive power system analysis and optimization",
