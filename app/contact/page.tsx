@@ -45,10 +45,10 @@ export default function ContactPage() {
       {/* Page Header */}
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-heading font-bold text-4xl md:text-5xl text-gray-900 dark:text-white mb-4">
+          <h1 className="font-heading font-bold text-4xl md:text-5xl text-gray-900 dark:text-white mb-4 animate-fade-down motion-reduce:animate-none">
             Contact Us
           </h1>
-          <p className="font-body text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="font-body text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto animate-fade-up motion-reduce:animate-none [animation-delay:120ms]">
             Have a project in mind? Get in touch with our expert team today
           </p>
         </div>
@@ -74,7 +74,7 @@ export default function ContactPage() {
               {/* Phone */}
               <a
                 href="tel:+917217674750"
-                className="flex items-start space-x-4 p-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg transition-shadow group"
+                className="flex items-start space-x-4 p-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none group"
               >
                 <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                   <Phone className="w-6 h-6 text-primary" />
@@ -92,7 +92,7 @@ export default function ContactPage() {
               {/* Email */}
               <a
                 href="mailto:jagwin.ent@gmail.com"
-                className="flex items-start space-x-4 p-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-lg transition-shadow group"
+                className="flex items-start space-x-4 p-4 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none group"
               >
                 <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                   <Mail className="w-6 h-6 text-primary" />
@@ -145,7 +145,7 @@ export default function ContactPage() {
 
           {/* Right Column - Inquiry Form */}
           <div>
-            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md p-8">
+            <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 p-8">
               <h2 className="font-heading font-bold text-2xl text-gray-900 dark:text-white mb-6">
                 Send us a Message
               </h2>
@@ -259,7 +259,7 @@ export default function ContactPage() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-primary hover:bg-orange-600 text-white font-body font-semibold py-4 px-6 rounded-lg transition-all transform hover:scale-105 shadow-lg"
+                  className="w-full bg-primary hover:bg-orange-600 text-white font-body font-semibold py-4 px-6 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none"
                 >
                   Send Message
                 </button>

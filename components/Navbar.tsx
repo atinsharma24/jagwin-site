@@ -57,7 +57,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="inline-block rounded-md px-2 py-1 bg-gray-50/90 border border-gray-200/80 shadow-sm dark:bg-white/95 dark:border-white/10 dark:shadow-none">
+            <div className="inline-block rounded-md px-2 py-1 bg-gray-50/90 border border-gray-200/80 shadow-sm transition-transform duration-300 group-hover:-translate-y-0.5 motion-reduce:transform-none dark:bg-white/95 dark:border-white/10 dark:shadow-none">
               <Image
                 src="/images/logo.png"
                 alt="Jagwin Logo"
@@ -101,7 +101,7 @@ export default function Navbar() {
             {/* Call Now Button - Desktop */}
             <a
               href="tel:+917217674750"
-              className="hidden md:flex items-center space-x-2 bg-primary hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-body font-semibold transition-all transform hover:scale-105 shadow-lg"
+              className="hidden md:flex items-center space-x-2 bg-primary hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-body font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none"
             >
               <Phone className="w-5 h-5" />
               <span>Call Now</span>

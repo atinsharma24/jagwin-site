@@ -40,7 +40,7 @@ function ServiceCard({
   const [src, setSrc] = useState(service.image);
 
   return (
-    <div className="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:border-orange-200 transition-all duration-300 hover:scale-105">
+    <div className="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-2xl hover:border-orange-200 transition-all duration-300 hover:-translate-y-1 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none">
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image
           src={src}
@@ -131,10 +131,10 @@ export default function ServicesPage() {
       {/* Page Header */}
       <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-heading font-bold text-4xl md:text-5xl text-gray-900 dark:text-white mb-4">
+          <h1 className="font-heading font-bold text-4xl md:text-5xl text-gray-900 dark:text-white mb-4 animate-fade-down motion-reduce:animate-none">
             Our Services
           </h1>
-          <p className="font-body text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="font-body text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto animate-fade-up motion-reduce:animate-none [animation-delay:120ms]">
             Comprehensive electrical safety and power solutions designed for industrial and commercial excellence
           </p>
         </div>
@@ -151,7 +151,7 @@ export default function ServicesPage() {
           {/* CTA Card - 9th Item */}
           <Link
             href="/contact"
-            className="group bg-primary rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 flex flex-col items-center justify-center p-12 min-h-[300px]"
+            className="group bg-primary rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none flex flex-col items-center justify-center p-12 min-h-[300px]"
           >
             <Handshake className="w-24 h-24 text-white mb-6 group-hover:scale-110 transition-transform" />
             <h3 className="font-heading font-bold text-white text-3xl text-center">

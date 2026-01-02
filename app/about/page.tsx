@@ -27,10 +27,10 @@ export default function AboutPage() {
       {/* Page Header */}
       <section className="bg-white dark:bg-dark-bg border-b border-gray-200 dark:border-gray-800 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-heading font-bold text-4xl md:text-5xl text-gray-900 dark:text-white mb-6">
+          <h1 className="font-heading font-bold text-4xl md:text-5xl text-gray-900 dark:text-white mb-6 animate-fade-down motion-reduce:animate-none">
             About Jagwin Enterprises LLP
           </h1>
-          <p className="font-body text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="font-body text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto animate-fade-up motion-reduce:animate-none [animation-delay:120ms]">
             Leading the industry in electrical safety and power solutions since inception
           </p>
         </div>
@@ -122,7 +122,7 @@ export default function AboutPage() {
               return (
                 <div
                   key={index}
-                  className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                  className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none"
                 >
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                     <Icon className="w-8 h-8 text-primary" />
@@ -152,13 +152,13 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="/contact"
-              className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-gray-100 text-primary font-body font-semibold text-lg rounded-lg transition-all transform hover:scale-105 shadow-xl"
+              className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-gray-100 text-primary font-body font-semibold text-lg rounded-lg shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none"
             >
               Get in Touch
             </a>
             <a
               href="tel:+917217674750"
-              className="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white hover:bg-white hover:text-primary text-white font-body font-semibold text-lg rounded-lg transition-all transform hover:scale-105"
+              className="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white hover:bg-white hover:text-primary text-white font-body font-semibold text-lg rounded-lg transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none"
             >
               Call Now
             </a>

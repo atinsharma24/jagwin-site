@@ -50,7 +50,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm font-body text-gray-400 hover:text-primary transition-colors"
+                    className="inline-flex text-sm font-body text-gray-400 hover:text-primary transition-all duration-300 hover:translate-x-1 motion-reduce:transform-none"
                   >
                     {link.label}
                   </Link>
@@ -77,7 +77,7 @@ export default function Footer() {
             <div className="space-y-3">
               <a
                 href="tel:+917217674750"
-                className="flex items-start space-x-3 text-sm font-body text-gray-400 hover:text-primary transition-colors group"
+                className="flex items-start space-x-3 text-sm font-body text-gray-400 hover:text-primary transition-all duration-300 group"
               >
                 <Phone className="w-5 h-5 mt-0.5 flex-shrink-0 group-hover:text-primary" />
                 <span>+91 7217674750</span>
@@ -85,7 +85,7 @@ export default function Footer() {
 
               <a
                 href="mailto:jagwin.ent@gmail.com"
-                className="flex items-start space-x-3 text-sm font-body text-gray-400 hover:text-primary transition-colors group"
+                className="flex items-start space-x-3 text-sm font-body text-gray-400 hover:text-primary transition-all duration-300 group"
               >
                 <Mail className="w-5 h-5 mt-0.5 flex-shrink-0 group-hover:text-primary" />
                 <span>jagwin.ent@gmail.com</span>
