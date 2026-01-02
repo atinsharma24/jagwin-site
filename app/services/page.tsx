@@ -5,37 +5,64 @@ import Image from "next/image";
 import { Handshake } from "lucide-react";
 import { useState } from "react";
 
-// Image fallback component with improved error handling
-function ImageWithFallback({
-  src,
-  fallbackSrc,
-  alt,
-  fill,
-  className,
+const FALLBACK_IMAGES = {
+  lightning:
+    "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&q=80",
+  surge:
+    "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&q=80",
+  earthing:
+    "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80",
+  ups:
+    "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&q=80",
+  stabilizer:
+    "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80",
+  battery:
+    "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&q=80",
+  solar:
+    "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80",
+  audit:
+    "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
+} as const;
+
+type FallbackKey = keyof typeof FALLBACK_IMAGES;
+
+function ServiceCard({
+  service,
 }: {
-  src: string;
-  fallbackSrc: string;
-  alt: string;
-  fill?: boolean;
-  className?: string;
+  service: {
+    id: number;
+    title: string;
+    image: string;
+    fallbackKey: FallbackKey;
+    description: string;
+  };
 }) {
-  const [imgSrc, setImgSrc] = useState(fallbackSrc); // Start with fallback
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [src, setSrc] = useState(service.image);
 
   return (
-    <Image
-      src={imgSrc}
-      alt={alt}
-      fill={fill}
-      className={className}
-      onError={() => {
-        if (imgSrc !== fallbackSrc) {
-          setImgSrc(fallbackSrc);
-        }
-      }}
-      onLoad={() => setIsLoaded(true)}
-      priority={false}
-    />
+    <div className="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:border-orange-200 transition-all duration-300 hover:scale-105">
+      <div className="relative aspect-[4/3] overflow-hidden">
+        <Image
+          src={src}
+          alt={service.title}
+          fill
+          className="object-cover group-hover:scale-110 transition-transform duration-300"
+          onError={() => setSrc(FALLBACK_IMAGES[service.fallbackKey])}
+        />
+      </div>
+
+      <div className="bg-primary p-4">
+        <h3 className="font-heading font-bold text-white text-lg text-center">
+          {service.title}
+        </h3>
+      </div>
+
+      <div className="p-4">
+        <p className="font-body text-gray-600 dark:text-gray-300 text-sm text-center">
+          {service.description}
+        </p>
+      </div>
+    </div>
   );
 }
 
@@ -45,56 +72,56 @@ export default function ServicesPage() {
       id: 1,
       title: "Lightning Protection System",
       image: "/images/lightning.jpg",
-      fallback: "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&q=80",
+      fallbackKey: "lightning" as const,
       description: "Advanced lightning protection for complete facility safety",
     },
     {
       id: 2,
       title: "Surge Protection Device",
       image: "/images/surge.jpg",
-      fallback: "https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&q=80",
+      fallbackKey: "surge" as const,
       description: "Protect your equipment from voltage surges and spikes",
     },
     {
       id: 3,
       title: "Chemical Earthing Solution",
       image: "/images/earthing.jpg",
-      fallback: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80",
+      fallbackKey: "earthing" as const,
       description: "Low resistance earthing systems for optimal safety",
     },
     {
       id: 4,
       title: "Online UPS",
       image: "/images/ups.jpg",
-      fallback: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&q=80",
+      fallbackKey: "ups" as const,
       description: "Uninterrupted power supply for critical operations",
     },
     {
       id: 5,
       title: "Servo Stabilizer",
       image: "/images/servo.jpg",
-      fallback: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80",
+      fallbackKey: "stabilizer" as const,
       description: "Voltage regulation for sensitive equipment protection",
     },
     {
       id: 6,
       title: "Lithium Ion Batteries",
       image: "/images/battery.jpg",
-      fallback: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&q=80",
+      fallbackKey: "battery" as const,
       description: "High-efficiency energy storage solutions",
     },
     {
       id: 7,
       title: "Solar EPC & BOS",
       image: "/images/solar.jpg",
-      fallback: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80",
+      fallbackKey: "solar" as const,
       description: "Complete solar engineering, procurement & construction",
     },
     {
       id: 8,
       title: "Power Quality Audit",
       image: "/images/audit.jpg",
-      fallback: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80",
+      fallbackKey: "audit" as const,
       description: "Comprehensive power system analysis and optimization",
     },
   ];
@@ -118,35 +145,7 @@ export default function ServicesPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Service Cards (1-8) */}
           {services.map((service) => (
-            <div
-              key={service.id}
-              className="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:border-orange-200 transition-all duration-300 hover:scale-105"
-            >
-              {/* Image Area */}
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <ImageWithFallback
-                  src={service.image}
-                  fallbackSrc={service.fallback}
-                  alt={service.title}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-
-              {/* Orange Title Bar */}
-              <div className="bg-primary p-4">
-                <h3 className="font-heading font-bold text-white text-lg text-center">
-                  {service.title}
-                </h3>
-              </div>
-
-              {/* Description */}
-              <div className="p-4">
-                <p className="font-body text-gray-600 dark:text-gray-300 text-sm text-center">
-                  {service.description}
-                </p>
-              </div>
-            </div>
+            <ServiceCard key={service.id} service={service} />
           ))}
 
           {/* CTA Card - 9th Item */}

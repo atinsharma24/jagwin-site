@@ -13,17 +13,16 @@
     @apply bg-gray-100 text-slate-900 font-body;
   }
 
-  body.dark {
-    @apply bg-dark-bg text-white;
+  html.dark body {
+    @apply bg-gray-900 text-white;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading font-bold;
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
   }
 }
