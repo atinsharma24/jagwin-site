@@ -57,7 +57,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="inline-block bg-white/95 px-2 py-1 rounded-md shadow-sm">
+            <div className="inline-block rounded-md px-2 py-1 bg-gray-50/90 border border-gray-200/80 shadow-sm dark:bg-white/95 dark:border-white/10 dark:shadow-none">
               <Image
                 src="/images/logo.png"
                 alt="Jagwin Logo"
