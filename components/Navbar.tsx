@@ -88,7 +88,7 @@ export default function Navbar() {
             {/* Dark Mode Toggle */}
             <button
               onClick={toggleDarkMode}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200 active:scale-95"
               aria-label="Toggle dark mode"
             >
               {darkMode ? (
@@ -101,7 +101,7 @@ export default function Navbar() {
             {/* Call Now Button - Desktop */}
             <a
               href="tel:+917217674750"
-              className="hidden md:flex items-center space-x-2 bg-primary hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-body font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none"
+              className="hidden md:flex items-center space-x-2 bg-primary hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-body font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:scale-95 motion-reduce:transform-none motion-reduce:transition-none"
             >
               <Phone className="w-5 h-5" />
               <span>Call Now</span>
@@ -110,11 +110,11 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              className="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200 active:scale-95"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
-                <X className="w-6 h-6" />
+                <X className="w-6 h-6 animate-rotate-in" />
               ) : (
                 <Menu className="w-6 h-6" />
               )}
@@ -124,21 +124,23 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden pb-4 border-t dark:border-gray-700 mt-2">
+          <div className="md:hidden pb-4 border-t dark:border-gray-700 mt-2 animate-slide-down">
             <div className="flex flex-col space-y-4 pt-4">
-              {navLinks.map((link) => (
+              {navLinks.map((link, index) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="font-body text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors px-2 py-2"
+                  className="font-body text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-all duration-200 px-2 py-2 hover:pl-4 active:scale-[0.98] motion-reduce:hover:pl-2 motion-reduce:active:scale-100 animate-fade-up"
+                  style={{ animationDelay: `${index * 50}ms` }}
                 >
                   {link.label}
                 </Link>
               ))}
               <a
                 href="tel:+917217674750"
-                className="flex items-center justify-center space-x-2 bg-primary hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-body font-semibold transition-all"
+                className="flex items-center justify-center space-x-2 bg-primary hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-body font-semibold transition-all duration-200 active:scale-[0.97] hover:shadow-lg motion-reduce:active:scale-100 animate-fade-up"
+                style={{ animationDelay: `${navLinks.length * 50}ms` }}
               >
                 <Phone className="w-5 h-5" />
                 <span>Call Now</span>
