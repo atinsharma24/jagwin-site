@@ -7,6 +7,13 @@
     --font-heading: var(--font-league-spartan);
     --font-body: var(--font-open-sans);
     --font-slogan: var(--font-dancing-script);
+
+    --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --motion-fast: 160ms;
+    --motion-base: 240ms;
+    --motion-slow: 420ms;
+
+    --reveal-duration: 650ms;
   }
 
   html {
@@ -38,11 +45,34 @@
 }
 
 @layer utilities {
+  .ui-motion {
+    transition-property: transform, opacity, box-shadow, background-color, border-color, color,
+      filter;
+    transition-duration: var(--motion-base);
+    transition-timing-function: var(--motion-ease);
+  }
+
+  .ui-motion-fast {
+    transition-duration: var(--motion-fast);
+  }
+
+  .ui-motion-slow {
+    transition-duration: var(--motion-slow);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ui-motion,
+    .ui-motion-fast,
+    .ui-motion-slow {
+      transition: none;
+    }
+  }
+
   .reveal {
     opacity: 0;
     transform: translateY(16px);
-    transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: opacity var(--reveal-duration) var(--motion-ease),
+      transform var(--reveal-duration) var(--motion-ease);
     will-change: transform, opacity;
   }
 
@@ -54,8 +84,8 @@
   .reveal-left {
     opacity: 0;
     transform: translateX(-16px);
-    transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: opacity var(--reveal-duration) var(--motion-ease),
+      transform var(--reveal-duration) var(--motion-ease);
     will-change: transform, opacity;
   }
 
@@ -67,8 +97,8 @@
   .reveal-right {
     opacity: 0;
     transform: translateX(16px);
-    transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: opacity var(--reveal-duration) var(--motion-ease),
+      transform var(--reveal-duration) var(--motion-ease);
     will-change: transform, opacity;
   }
 
@@ -92,9 +122,8 @@
   input:focus,
   textarea:focus,
   select:focus {
-    outline: none;
+    @apply outline-none ring-2 ring-primary/20 shadow-lg;
     transform: scale(1.01);
-    box-shadow: 0 0 0 3px rgba(240, 124, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
   @media (prefers-reduced-motion: reduce) {

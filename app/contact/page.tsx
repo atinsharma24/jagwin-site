@@ -94,7 +94,7 @@ export default function ContactPage() {
               {/* Phone */}
               <a
                 href="tel:+917217674750"
-                className="flex items-start space-x-4 p-4 rounded-2xl bg-white dark:bg-gray-800 border-2 border-brand-line/30 dark:border-gray-700 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none group"
+                className="flex items-start space-x-4 p-4 rounded-2xl bg-white dark:bg-gray-800 border-2 border-brand-line/30 dark:border-gray-700 shadow-sm hover:shadow-lg ui-motion hover:-translate-y-0.5 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none group"
               >
                 <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                   <Phone className="w-6 h-6 text-primary" />
@@ -112,7 +112,7 @@ export default function ContactPage() {
               {/* Email */}
               <a
                 href="mailto:info@jagwin.in"
-                className="flex items-start space-x-4 p-4 rounded-2xl bg-white dark:bg-gray-800 border-2 border-brand-line/30 dark:border-gray-700 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none group"
+                className="flex items-start space-x-4 p-4 rounded-2xl bg-white dark:bg-gray-800 border-2 border-brand-line/30 dark:border-gray-700 shadow-sm hover:shadow-lg ui-motion hover:-translate-y-0.5 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none group"
               >
                 <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                   <Mail className="w-6 h-6 text-primary" />
@@ -187,7 +187,7 @@ export default function ContactPage() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-brand-line/40 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 text-brand-ink dark:text-white font-body transition-all"
+                    className="w-full px-4 py-3 border border-brand-line/40 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 text-brand-ink dark:text-white font-body ui-motion"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -207,7 +207,7 @@ export default function ContactPage() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-brand-line/40 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 text-brand-ink dark:text-white font-body transition-all"
+                    className="w-full px-4 py-3 border border-brand-line/40 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 text-brand-ink dark:text-white font-body ui-motion"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -227,7 +227,7 @@ export default function ContactPage() {
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-brand-line/40 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 text-brand-ink dark:text-white font-body transition-all"
+                    className="w-full px-4 py-3 border border-brand-line/40 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 text-brand-ink dark:text-white font-body ui-motion"
                     placeholder="+91 XXXXXXXXXX"
                   />
                 </div>
@@ -246,7 +246,7 @@ export default function ContactPage() {
                     required
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-brand-line/40 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 text-brand-ink dark:text-white font-body transition-all"
+                    className="w-full px-4 py-3 border border-brand-line/40 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 text-brand-ink dark:text-white font-body ui-motion"
                   >
                     <option value="">Select a service...</option>
                     {services.map((service) => (
@@ -272,7 +272,7 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className="w-full px-4 py-3 border border-brand-line/40 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 text-brand-ink dark:text-white font-body transition-all resize-none"
+                    className="w-full px-4 py-3 border border-brand-line/40 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-700 text-brand-ink dark:text-white font-body ui-motion resize-none"
                     placeholder="Tell us about your project requirements..."
                   />
                 </div>

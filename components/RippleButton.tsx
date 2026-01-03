@@ -36,7 +36,7 @@ export default function RippleButton({
   };
 
   // Make width utilities (e.g. w-full) work by default on both <a> and <button>
-  const baseClassName = `relative inline-flex items-center justify-center overflow-hidden ${className}`;
+  const baseClassName = `relative inline-flex items-center justify-center overflow-hidden ui-motion ui-motion-fast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 ${className}`;
 
   if (href) {
     return (
