@@ -40,10 +40,11 @@ function ServiceCard({
   index: number;
 }) {
   const [src, setSrc] = useState(service.image);
+  const revealClassName = index % 2 === 0 ? "reveal-right" : "reveal-left";
 
   return (
     <div
-      className="reveal group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-orange-200 motion-reduce:transform-none"
+      className={`${revealClassName} group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-orange-200 motion-reduce:transform-none`}
       style={{ transitionDelay: `${index * 35}ms` }}
     >
       <div className="relative aspect-[4/3] overflow-hidden">
@@ -54,9 +55,9 @@ function ServiceCard({
           className="object-cover group-hover:scale-110 transition-transform duration-600 ease-out"
           onError={() => setSrc(FALLBACK_IMAGES[service.fallbackKey])}
         />
-        {/* Hide bottom-right watermark area (GeminiAI)
+        {/* Hide bottom-right watermark area (GeminiAI) */}
         <div className="pointer-events-none absolute bottom-0 right-0 h-14 w-24 bg-black/25 backdrop-blur-sm" />
-        <div className="pointer-events-none absolute bottom-0 right-0 h-20 w-36 bg-gradient-to-tl from-black/30 via-black/10 to-transparent" /> */}
+        <div className="pointer-events-none absolute bottom-0 right-0 h-20 w-36 bg-gradient-to-tl from-black/30 via-black/10 to-transparent" />
       </div>
 
       <div className="bg-primary p-4">
