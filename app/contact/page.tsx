@@ -1,7 +1,7 @@
 "use client";
 
 import { Phone, Mail, MapPin } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -40,6 +40,25 @@ export default function ContactPage() {
     });
   };
 
+  useEffect(() => {
+    const revealElements = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -100px 0px" }
+    );
+
+    revealElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="pt-20 min-h-screen bg-brand-paper dark:bg-gray-900">
       {/* Page Header */}
@@ -58,7 +77,7 @@ export default function ContactPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Column - Contact Info */}
-          <div className="space-y-8">
+          <div className="reveal-left space-y-8">
             <div>
               <h2 className="font-heading font-bold text-3xl text-brand-ink dark:text-white mb-6">
                 Get in Touch
@@ -145,7 +164,7 @@ export default function ContactPage() {
           </div>
 
           {/* Right Column - Inquiry Form */}
-          <div>
+          <div className="reveal-right">
             <div className="bg-white dark:bg-gray-800 border-2 border-brand-line/30 dark:border-gray-700 rounded-2xl shadow-sm hover:shadow-lg transition-shadow duration-300 p-8">
               <h2 className="font-heading font-bold text-2xl text-brand-ink dark:text-white mb-6">
                 Send us a Message

@@ -1,4 +1,7 @@
+"use client";
+
 import { Shield, Clock, Award, User } from "lucide-react";
+import { useEffect } from "react";
 
 export default function AboutPage() {
   const features = [
@@ -22,6 +25,25 @@ export default function AboutPage() {
     },
   ];
 
+  useEffect(() => {
+    const revealElements = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -100px 0px" }
+    );
+
+    revealElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="pt-20 min-h-screen bg-gray-100 dark:bg-gray-900">
       {/* Page Header */}
@@ -39,7 +61,7 @@ export default function AboutPage() {
       {/* Mission Section */}
       <section className="bg-gradient-to-br from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900 py-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
+          <div className="reveal-left text-center">
             <h2 className="font-heading font-bold text-3xl md:text-4xl text-gray-900 dark:text-white mb-6">
               Our Mission
             </h2>
@@ -77,7 +99,7 @@ export default function AboutPage() {
             Leadership
           </h2>
 
-          <div className="bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-2xl shadow-xl p-8 md:p-12">
+          <div className="reveal-right bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-2xl shadow-xl p-8 md:p-12">
             <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
               {/* Profile Image Placeholder */}
               <div className="flex-shrink-0">
@@ -122,7 +144,8 @@ export default function AboutPage() {
               return (
                 <div
                   key={index}
-                  className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none"
+                  className="reveal bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none"
+                  style={{ transitionDelay: `${index * 150}ms` }}
                 >
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                     <Icon className="w-8 h-8 text-primary" />

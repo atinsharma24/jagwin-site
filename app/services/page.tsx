@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Handshake } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef, MouseEvent, useEffect } from "react";
 
 const FALLBACK_IMAGES = {
   lightning:
@@ -28,6 +28,7 @@ type FallbackKey = keyof typeof FALLBACK_IMAGES;
 
 function ServiceCard({
   service,
+  index,
 }: {
   service: {
     id: number;
@@ -36,17 +37,45 @@ function ServiceCard({
     fallbackKey: FallbackKey;
     description: string;
   };
+  index: number;
 }) {
   const [src, setSrc] = useState(service.image);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    const card = cardRef.current;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = (y - centerY) / 10;
+    const rotateY = (centerX - x) / 10;
+
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+  };
+
+  const handleMouseLeave = () => {
+    if (!cardRef.current) return;
+    cardRef.current.style.transform =
+      "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)";
+  };
 
   return (
-    <div className="group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-2xl hover:border-orange-200 transition-all duration-300 hover:-translate-y-1 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none">
+    <div
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="reveal group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-2xl hover:border-orange-200 transition-all duration-300 motion-reduce:transform-none"
+      style={{ transitionDelay: `${index * 100}ms` }}
+    >
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image
           src={src}
           alt={service.title}
           fill
-          className="object-cover group-hover:scale-110 transition-transform duration-300"
+          className="object-cover group-hover:scale-125 transition-transform duration-700 ease-out"
           onError={() => setSrc(FALLBACK_IMAGES[service.fallbackKey])}
         />
       </div>
@@ -126,6 +155,25 @@ export default function ServicesPage() {
     },
   ];
 
+  useEffect(() => {
+    const revealElements = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -100px 0px" }
+    );
+
+    revealElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="pt-20 min-h-screen bg-gray-100 dark:bg-gray-900">
       {/* Page Header */}
@@ -144,8 +192,8 @@ export default function ServicesPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Service Cards (1-8) */}
-          {services.map((service) => (
-            <ServiceCard key={service.id} service={service} />
+          {services.map((service, index) => (
+            <ServiceCard key={service.id} service={service} index={index} />
           ))}
 
           {/* CTA Card - 9th Item */}

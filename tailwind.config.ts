@@ -40,12 +40,22 @@ const config: Config = {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-6px)" },
         },
+        shimmer: {
+          "0%": { backgroundPosition: "-1000px 0" },
+          "100%": { backgroundPosition: "1000px 0" },
+        },
+        "scale-in": {
+          "0%": { transform: "scale(0.95)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" },
+        },
       },
       animation: {
         "fade-in": "fade-in 600ms ease-out both",
         "fade-up": "fade-up 700ms cubic-bezier(0.22, 1, 0.36, 1) both",
         "fade-down": "fade-down 700ms cubic-bezier(0.22, 1, 0.36, 1) both",
         float: "float 3.5s ease-in-out infinite",
+        shimmer: "shimmer 2s infinite linear",
+        "scale-in": "scale-in 500ms cubic-bezier(0.22, 1, 0.36, 1) both",
       },
     },
   },
