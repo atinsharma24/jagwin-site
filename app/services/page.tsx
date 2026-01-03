@@ -54,6 +54,9 @@ function ServiceCard({
           className="object-cover group-hover:scale-110 transition-transform duration-600 ease-out"
           onError={() => setSrc(FALLBACK_IMAGES[service.fallbackKey])}
         />
+        {/* Hide bottom-right watermark area (GeminiAI) */}
+        <div className="pointer-events-none absolute bottom-0 right-0 h-14 w-24 bg-black/25 backdrop-blur-sm" />
+        <div className="pointer-events-none absolute bottom-0 right-0 h-20 w-36 bg-gradient-to-tl from-black/30 via-black/10 to-transparent" />
       </div>
 
       <div className="bg-primary p-4">
@@ -76,7 +79,7 @@ export default function ServicesPage() {
     {
       id: 1,
       title: "Lightning Protection System (LPS)",
-      image: "/images/service-lps.jpg",
+      image: "/images/service-lps.png",
       fallbackKey: "lightning" as const,
       description: "Advanced lightning protection for complete facility safety",
     },
@@ -97,21 +100,21 @@ export default function ServicesPage() {
     {
       id: 4,
       title: "Online UPS & SMF Batteries",
-      image: "/images/service-ups-smf.jpg",
+      image: "/images/service-ups-smf.png",
       fallbackKey: "ups" as const,
       description: "Reliable backup power and battery solutions for critical loads",
     },
     {
       id: 5,
       title: "Servo Stabilizers",
-      image: "/images/service-servo-stabilizers.jpg",
+      image: "/images/service-servo-stabilizers.png",
       fallbackKey: "stabilizer" as const,
       description: "Voltage regulation for sensitive equipment protection",
     },
     {
       id: 6,
       title: "Lithium Ion Batteries",
-      image: "/images/service-lithium-ion-batteries.jpg",
+      image: "/images/service-lithium-ion-batteries.png",
       fallbackKey: "battery" as const,
       description: "High-efficiency energy storage solutions",
     },
@@ -125,7 +128,7 @@ export default function ServicesPage() {
     {
       id: 8,
       title: "Power Quality Audit (PQA)",
-      image: "/images/service-pqa.jpg",
+      image: "/images/service-pqa.png",
       fallbackKey: "audit" as const,
       description: "Comprehensive power system analysis and optimization",
     },
