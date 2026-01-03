@@ -38,6 +38,15 @@
 }
 
 @layer utilities {
+  .ui-ripple-bubble {
+    left: var(--ripple-x, 50%);
+    top: var(--ripple-y, 50%);
+    width: var(--ripple-size, 20px);
+    height: var(--ripple-size, 20px);
+    margin-left: calc(var(--ripple-size, 20px) / -2);
+    margin-top: calc(var(--ripple-size, 20px) / -2);
+  }
+
   .ui-motion {
     transition-property: transform, opacity, box-shadow, background-color, border-color, color,
       filter;

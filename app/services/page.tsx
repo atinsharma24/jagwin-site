@@ -26,6 +26,21 @@ const FALLBACK_IMAGES = {
 
 type FallbackKey = keyof typeof FALLBACK_IMAGES;
 
+const REVEAL_DELAY_CLASSES = [
+  "[transition-delay:0ms]",
+  "[transition-delay:35ms]",
+  "[transition-delay:70ms]",
+  "[transition-delay:105ms]",
+  "[transition-delay:140ms]",
+  "[transition-delay:175ms]",
+  "[transition-delay:210ms]",
+  "[transition-delay:245ms]",
+  "[transition-delay:280ms]",
+  "[transition-delay:315ms]",
+  "[transition-delay:350ms]",
+  "[transition-delay:385ms]",
+] as const;
+
 function ServiceCard({
   service,
   index,
@@ -41,12 +56,11 @@ function ServiceCard({
 }) {
   const [src, setSrc] = useState(service.image);
   const revealClassName = index % 2 === 0 ? "reveal-right" : "reveal-left";
-  const revealClassName = index % 2 === 0 ? "reveal-right" : "reveal-left";
+  const delayClassName = REVEAL_DELAY_CLASSES[index] ?? REVEAL_DELAY_CLASSES[REVEAL_DELAY_CLASSES.length - 1];
 
   return (
     <div
-      className={`${revealClassName} group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-md ui-motion hover:-translate-y-1 hover:shadow-xl hover:border-orange-200 motion-reduce:transform-none`}
-      style={{ transitionDelay: `${index * 35}ms` }}
+      className={`${revealClassName} ${delayClassName} group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-md ui-motion hover:-translate-y-1 hover:shadow-xl hover:border-orange-200 motion-reduce:transform-none`}
     >
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image

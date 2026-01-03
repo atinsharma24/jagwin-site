@@ -19,7 +19,7 @@ export default function RippleButton({
   type = "button",
   disabled = false,
 }: RippleButtonProps) {
-  const [ripples, setRipples] = useState<{ x: number; y: number; id: number }[]>([]);
+  const [rippleKey, setRippleKey] = useState(0);
 
   const createRipple = (e: MouseEvent<HTMLElement>) => {
     if (disabled) {
@@ -30,13 +30,12 @@ export default function RippleButton({
     const rect = button.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    const id = Date.now();
 
-    setRipples((prev) => [...prev, { x, y, id }]);
-
-    setTimeout(() => {
-      setRipples((prev) => prev.filter((ripple) => ripple.id !== id));
-    }, 600);
+    // Avoid React inline styles: set CSS vars directly on the element.
+    button.style.setProperty("--ripple-x", `${x}px`);
+    button.style.setProperty("--ripple-y", `${y}px`);
+    button.style.setProperty("--ripple-size", "20px");
+    setRippleKey(Date.now());
 
     onClick?.();
   };
@@ -50,24 +49,15 @@ export default function RippleButton({
         href={href}
         className={baseClassName}
         onClick={createRipple}
-        aria-disabled={disabled}
         tabIndex={disabled ? -1 : undefined}
       >
         {children}
-        {ripples.map((ripple) => (
+        {rippleKey ? (
           <span
-            key={ripple.id}
-            className="absolute bg-white/20 rounded-full animate-ripple pointer-events-none"
-            style={{
-              left: ripple.x,
-              top: ripple.y,
-              width: 20,
-              height: 20,
-              marginLeft: -10,
-              marginTop: -10,
-            }}
+            key={rippleKey}
+            className="absolute bg-white/20 rounded-full animate-ripple pointer-events-none ui-ripple-bubble"
           />
-        ))}
+        ) : null}
       </a>
     );
   }
@@ -75,20 +65,12 @@ export default function RippleButton({
   return (
     <button type={type} className={baseClassName} onClick={createRipple} disabled={disabled}>
       {children}
-      {ripples.map((ripple) => (
+      {rippleKey ? (
         <span
-          key={ripple.id}
-          className="absolute bg-white/20 rounded-full animate-ripple pointer-events-none"
-          style={{
-            left: ripple.x,
-            top: ripple.y,
-            width: 20,
-            height: 20,
-            marginLeft: -10,
-            marginTop: -10,
-          }}
+          key={rippleKey}
+          className="absolute bg-white/20 rounded-full animate-ripple pointer-events-none ui-ripple-bubble"
         />
-      ))}
+      ) : null}
     </button>
   );
 }
