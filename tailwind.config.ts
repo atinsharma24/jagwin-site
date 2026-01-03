@@ -71,10 +71,6 @@ const config: Config = {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-4px)" },
         },
-        "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 0 0 rgba(240, 124, 0, 0.4)" },
-          "50%": { boxShadow: "0 0 20px 8px rgba(240, 124, 0, 0.2)" },
-        },
       },
       animation: {
         "fade-in": "fade-in 600ms ease-out both",
@@ -87,7 +83,6 @@ const config: Config = {
         "gradient-shift": "gradient-shift 8s ease infinite",
         blob: "blob 7s ease-in-out infinite",
         "icon-bounce": "icon-bounce 2s ease-in-out infinite",
-        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
       },
     },
   },

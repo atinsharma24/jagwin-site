@@ -3,15 +3,14 @@
 import { Shield, Clock, Award, User } from "lucide-react";
 import { useEffect } from "react";
 import { useCountUp } from "@/hooks/useCountUp";
-import GradientText from "@/components/GradientText";
 
 function StatCounter({ end, suffix, label }: { end: number; suffix?: string; label: string }) {
   const { count, elementRef } = useCountUp(end, 2000);
 
   return (
-    <div ref={elementRef as any} className="text-center reveal group">
-      <div className="font-heading font-bold text-4xl md:text-5xl mb-2">
-        <GradientText>{count}{suffix}</GradientText>
+    <div ref={elementRef as any} className="text-center reveal">
+      <div className="font-heading font-bold text-4xl md:text-5xl text-white mb-2">
+        {count}{suffix}
       </div>
       <div className="font-body text-white/90 text-sm md:text-base">{label}</div>
     </div>

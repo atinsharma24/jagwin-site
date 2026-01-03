@@ -1,10 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import RippleButton from "@/components/RippleButton";
-import GradientText from "@/components/GradientText";
 import MorphingBlob from "@/components/MorphingBlob";
 import useMagneticCursor from "@/hooks/useMagneticCursor";
 
@@ -51,7 +49,7 @@ export default function Home() {
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Main Headline */}
           <h1 className="font-heading font-bold text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 leading-tight animate-fade-down motion-reduce:animate-none">
-            Complete <GradientText>Electrical Safety</GradientText> & Power Solutions
+            Complete Electrical Safety & Power Solutions
           </h1>
 
           {/* Slogan with Orange Accents */}
@@ -64,7 +62,7 @@ export default function Home() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <div ref={magneticRef1} className="transition-transform duration-300 ease-out motion-reduce:transform-none">
+            <div ref={magneticRef1} className="w-full sm:w-auto transition-transform duration-300 ease-out motion-reduce:transform-none">
               <RippleButton
                 href="/services"
                 className="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-orange-600 text-white font-body font-semibold text-lg rounded-lg shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none animate-fade-up motion-reduce:animate-none [animation-delay:220ms]"
@@ -72,7 +70,7 @@ export default function Home() {
                 Explore Services
               </RippleButton>
             </div>
-            <div ref={magneticRef2} className="transition-transform duration-300 ease-out motion-reduce:transform-none">
+            <div ref={magneticRef2} className="w-full sm:w-auto transition-transform duration-300 ease-out motion-reduce:transform-none">
               <RippleButton
                 href="/contact"
                 className="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-body font-semibold text-lg rounded-lg transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none animate-fade-up motion-reduce:animate-none [animation-delay:320ms]"

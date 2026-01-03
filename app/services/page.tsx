@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Handshake } from "lucide-react";
 import { useState, useRef, MouseEvent, useEffect } from "react";
-import GradientText from "@/components/GradientText";
 
 const FALLBACK_IMAGES = {
   lightning:
@@ -70,8 +69,8 @@ function ServiceCard({
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="reveal group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-2xl hover:border-orange-200 transition-all duration-300 motion-reduce:transform-none"
-      style={{ transitionDelay: `${index * 100}ms` }}
+      className="reveal reveal-fast group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-2xl hover:border-orange-200 transition-all duration-300 motion-reduce:transform-none"
+      style={{ transitionDelay: `${index * 40}ms` }}
     >
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image
