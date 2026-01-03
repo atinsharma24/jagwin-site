@@ -3,14 +3,15 @@
 import { Shield, Clock, Award, User } from "lucide-react";
 import { useEffect } from "react";
 import { useCountUp } from "@/hooks/useCountUp";
+import GradientText from "@/components/GradientText";
 
 function StatCounter({ end, suffix, label }: { end: number; suffix?: string; label: string }) {
   const { count, elementRef } = useCountUp(end, 2000);
 
   return (
-    <div ref={elementRef as any} className="text-center reveal">
-      <div className="font-heading font-bold text-4xl md:text-5xl text-white mb-2">
-        {count}{suffix}
+    <div ref={elementRef as any} className="text-center reveal group">
+      <div className="font-heading font-bold text-4xl md:text-5xl mb-2">
+        <GradientText>{count}{suffix}</GradientText>
       </div>
       <div className="font-body text-white/90 text-sm md:text-base">{label}</div>
     </div>
@@ -170,11 +171,11 @@ export default function AboutPage() {
               return (
                 <div
                   key={index}
-                  className="reveal bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none"
+                  className="reveal group bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none"
                   style={{ transitionDelay: `${index * 150}ms` }}
                 >
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Icon className="w-8 h-8 text-primary" />
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-icon-bounce motion-reduce:animate-none">
+                    <Icon className="w-8 h-8 text-primary group-hover:scale-110 transition-transform duration-300" />
                   </div>
                   <h3 className="font-heading font-bold text-xl text-gray-900 dark:text-white mb-4">
                     {feature.title}

@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
+import PageTransition from "@/components/PageTransition";
 
 const leagueSpartan = League_Spartan({
   subsets: ["latin"],
@@ -81,7 +82,9 @@ export default function RootLayout({
       >
         <ScrollProgress />
         <Navbar />
-        <main className="min-h-screen">{children}</main>
+        <PageTransition>
+          <main className="min-h-screen">{children}</main>
+        </PageTransition>
         <Footer />
       </body>
     </html>

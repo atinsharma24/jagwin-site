@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Handshake } from "lucide-react";
 import { useState, useRef, MouseEvent, useEffect } from "react";
+import GradientText from "@/components/GradientText";
 
 const FALLBACK_IMAGES = {
   lightning:
@@ -54,12 +55,14 @@ function ServiceCard({
     const rotateY = (centerX - x) / 10;
 
     card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+    card.style.boxShadow = "0 20px 60px rgba(240, 124, 0, 0.3)";
   };
 
   const handleMouseLeave = () => {
     if (!cardRef.current) return;
     cardRef.current.style.transform =
       "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)";
+    cardRef.current.style.boxShadow = "";
   };
 
   return (

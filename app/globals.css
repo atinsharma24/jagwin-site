@@ -80,4 +80,21 @@
       transition: none;
     }
   }
+
+  /* Enhanced Input Focus Effects */
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: none;
+    transform: scale(1.01);
+    box-shadow: 0 0 0 3px rgba(240, 124, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    input:focus,
+    textarea:focus,
+    select:focus {
+      transform: none;
+    }
+  }
 }
