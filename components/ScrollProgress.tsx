@@ -21,8 +21,11 @@ export default function ScrollProgress() {
 
   return (
     <div
-      className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-orange-400 to-primary z-[100] origin-left transition-transform duration-150"
-      style={{ transform: `scaleX(${progress / 100})` }}
+      className="fixed left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-orange-400 to-primary z-[60] origin-left transition-transform duration-150 pointer-events-none"
+      style={{
+        transform: `scaleX(${progress / 100})`,
+        top: "env(safe-area-inset-top)",
+      }}
     />
   );
 }

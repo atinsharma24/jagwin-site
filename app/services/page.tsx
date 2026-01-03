@@ -55,9 +55,9 @@ function ServiceCard({
           className="object-cover group-hover:scale-110 transition-transform duration-600 ease-out"
           onError={() => setSrc(FALLBACK_IMAGES[service.fallbackKey])}
         />
-        {/* Hide bottom-right watermark area (GeminiAI) */}
+        {/* Hide bottom-right watermark area (GeminiAI)
         <div className="pointer-events-none absolute bottom-0 right-0 h-14 w-24 bg-black/25 backdrop-blur-sm" />
-        <div className="pointer-events-none absolute bottom-0 right-0 h-20 w-36 bg-gradient-to-tl from-black/30 via-black/10 to-transparent" />
+        <div className="pointer-events-none absolute bottom-0 right-0 h-20 w-36 bg-gradient-to-tl from-black/30 via-black/10 to-transparent" /> */}
       </div>
 
       <div className="bg-primary p-4">
