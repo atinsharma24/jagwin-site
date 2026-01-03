@@ -77,6 +77,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          // Default theme to dark for new users; only force light if explicitly saved
+          dangerouslySetInnerHTML={{
+            __html: `(() => {
+  try {
+    const saved = localStorage.getItem('theme');
+    const shouldBeDark = saved !== 'light';
+    document.documentElement.classList.toggle('dark', shouldBeDark);
+    if (!saved) localStorage.setItem('theme', shouldBeDark ? 'dark' : 'light');
+  } catch (_) {}
+})();`,
+          }}
+        />
+      </head>
       <body
         className={`${leagueSpartan.variable} ${openSans.variable} ${dancingScript.variable} antialiased bg-gray-100 text-slate-900`}
       >

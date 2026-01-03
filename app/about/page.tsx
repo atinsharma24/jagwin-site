@@ -170,11 +170,11 @@ export default function AboutPage() {
               return (
                 <div
                   key={index}
-                  className="reveal group bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none"
+                  className="reveal group bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 text-center hover:shadow-xl ui-motion hover:-translate-y-0.5 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none"
                   style={{ transitionDelay: `${index * 120}ms` }}
                 >
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Icon className="w-8 h-8 text-primary transition-transform duration-300 group-hover:scale-105 motion-reduce:transform-none" />
+                    <Icon className="w-8 h-8 text-primary ui-motion ui-motion-fast group-hover:scale-105 motion-reduce:transform-none" />
                   </div>
                   <h3 className="font-heading font-bold text-xl text-gray-900 dark:text-white mb-4">
                     {feature.title}
@@ -201,13 +201,13 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="/contact"
-              className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-gray-100 text-primary font-body font-semibold text-lg rounded-lg shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none"
+              className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-gray-100 text-primary font-body font-semibold text-lg rounded-lg shadow-xl ui-motion hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none"
             >
               Get in Touch
             </a>
             <a
               href="tel:+917217674750"
-              className="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white hover:bg-white hover:text-primary text-white font-body font-semibold text-lg rounded-lg transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none"
+              className="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white hover:bg-white hover:text-primary text-white font-body font-semibold text-lg rounded-lg ui-motion hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none"
             >
               Call Now
             </a>

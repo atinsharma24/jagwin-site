@@ -26,6 +26,21 @@ const FALLBACK_IMAGES = {
 
 type FallbackKey = keyof typeof FALLBACK_IMAGES;
 
+const REVEAL_DELAY_CLASSES = [
+  "[transition-delay:0ms]",
+  "[transition-delay:35ms]",
+  "[transition-delay:70ms]",
+  "[transition-delay:105ms]",
+  "[transition-delay:140ms]",
+  "[transition-delay:175ms]",
+  "[transition-delay:210ms]",
+  "[transition-delay:245ms]",
+  "[transition-delay:280ms]",
+  "[transition-delay:315ms]",
+  "[transition-delay:350ms]",
+  "[transition-delay:385ms]",
+] as const;
+
 function ServiceCard({
   service,
   index,
@@ -41,18 +56,18 @@ function ServiceCard({
 }) {
   const [src, setSrc] = useState(service.image);
   const revealClassName = index % 2 === 0 ? "reveal-right" : "reveal-left";
+  const delayClassName = REVEAL_DELAY_CLASSES[index] ?? REVEAL_DELAY_CLASSES[REVEAL_DELAY_CLASSES.length - 1];
 
   return (
     <div
-      className={`${revealClassName} group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-orange-200 motion-reduce:transform-none`}
-      style={{ transitionDelay: `${index * 35}ms` }}
+      className={`${revealClassName} ${delayClassName} group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-md ui-motion hover:-translate-y-1 hover:shadow-xl hover:border-orange-200 motion-reduce:transform-none`}
     >
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image
           src={src}
           alt={service.title}
           fill
-          className="object-cover group-hover:scale-110 transition-transform duration-600 ease-out"
+          className="object-cover group-hover:scale-110 ui-motion ui-motion-slow"
           onError={() => setSrc(FALLBACK_IMAGES[service.fallbackKey])}
         />
         {/* Hide bottom-right watermark area (GeminiAI)
@@ -179,9 +194,9 @@ export default function ServicesPage() {
           {/* CTA Card - 9th Item */}
           <Link
             href="/contact"
-            className="group bg-primary rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none flex flex-col items-center justify-center p-12 min-h-[300px]"
+            className="group bg-primary rounded-lg overflow-hidden shadow-lg hover:shadow-2xl ui-motion hover:-translate-y-1 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none flex flex-col items-center justify-center p-12 min-h-[300px]"
           >
-            <Handshake className="w-24 h-24 text-white mb-6 group-hover:scale-110 transition-transform" />
+            <Handshake className="w-24 h-24 text-white mb-6 group-hover:scale-110 ui-motion ui-motion-fast" />
             <h3 className="font-heading font-bold text-white text-3xl text-center">
               GET A QUOTE
             </h3>

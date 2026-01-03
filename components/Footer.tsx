@@ -29,7 +29,7 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className="mb-4">
-              <div className="inline-block bg-white/95 px-3 py-2 rounded-md shadow-sm">
+              <div className="inline-block bg-white/95 px-3 py-2 rounded-md shadow-sm ui-motion ui-motion-fast hover:-translate-y-0.5 motion-reduce:transform-none">
                 <Image
                   src="/images/logo.png"
                   alt="Jagwin Enterprises LLP"
@@ -52,7 +52,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="inline-flex text-sm font-body text-gray-400 hover:text-primary transition-all duration-300 hover:translate-x-1 motion-reduce:transform-none"
+                    className="inline-flex text-sm font-body text-gray-400 hover:text-primary ui-motion ui-motion-fast hover:translate-x-1 motion-reduce:transform-none"
                   >
                     {link.label}
                   </Link>
@@ -79,7 +79,7 @@ export default function Footer() {
             <div className="space-y-3">
               <a
                 href="tel:+917217674750"
-                className="flex items-start space-x-3 text-sm font-body text-gray-400 hover:text-primary transition-all duration-300 group"
+                className="flex items-start space-x-3 text-sm font-body text-gray-400 hover:text-primary ui-motion ui-motion-fast group"
               >
                 <Phone className="w-5 h-5 mt-0.5 flex-shrink-0 group-hover:text-primary" />
                 <span>+91 7217674750</span>
@@ -87,7 +87,7 @@ export default function Footer() {
 
               <a
                 href="mailto:info@jagwin.in"
-                className="flex items-start space-x-3 text-sm font-body text-gray-400 hover:text-primary transition-all duration-300 group"
+                className="flex items-start space-x-3 text-sm font-body text-gray-400 hover:text-primary ui-motion ui-motion-fast group"
               >
                 <Mail className="w-5 h-5 mt-0.5 flex-shrink-0 group-hover:text-primary" />
                 <span>info@jagwin.in</span>
