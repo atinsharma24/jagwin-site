@@ -41,6 +41,7 @@ function ServiceCard({
 }) {
   const [src, setSrc] = useState(service.image);
   const revealClassName = index % 2 === 0 ? "reveal-right" : "reveal-left";
+  const revealClassName = index % 2 === 0 ? "reveal-right" : "reveal-left";
 
   return (
     <div

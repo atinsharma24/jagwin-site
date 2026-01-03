@@ -7,13 +7,6 @@
     --font-heading: var(--font-league-spartan);
     --font-body: var(--font-open-sans);
     --font-slogan: var(--font-dancing-script);
-
-    --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
-    --motion-fast: 160ms;
-    --motion-base: 240ms;
-    --motion-slow: 420ms;
-
-    --reveal-duration: 650ms;
   }
 
   html {
@@ -71,8 +64,8 @@
   .reveal {
     opacity: 0;
     transform: translateY(16px);
-    transition: opacity var(--reveal-duration) var(--motion-ease),
-      transform var(--reveal-duration) var(--motion-ease);
+    transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
     will-change: transform, opacity;
   }
 
@@ -84,8 +77,8 @@
   .reveal-left {
     opacity: 0;
     transform: translateX(-16px);
-    transition: opacity var(--reveal-duration) var(--motion-ease),
-      transform var(--reveal-duration) var(--motion-ease);
+    transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
     will-change: transform, opacity;
   }
 
@@ -97,8 +90,8 @@
   .reveal-right {
     opacity: 0;
     transform: translateX(16px);
-    transition: opacity var(--reveal-duration) var(--motion-ease),
-      transform var(--reveal-duration) var(--motion-ease);
+    transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
     will-change: transform, opacity;
   }
 
