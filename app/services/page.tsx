@@ -43,8 +43,8 @@ function ServiceCard({
 
   return (
     <div
-      className="reveal reveal-fast group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-orange-200 motion-reduce:transform-none"
-      style={{ transitionDelay: `${index * 40}ms` }}
+      className="reveal group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-orange-200 motion-reduce:transform-none"
+      style={{ transitionDelay: `${index * 35}ms` }}
     >
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image

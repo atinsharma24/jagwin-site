@@ -170,8 +170,8 @@ export default function AboutPage() {
               return (
                 <div
                   key={index}
-                  className="reveal group bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none"
-                  style={{ transitionDelay: `${index * 150}ms` }}
+                  className="reveal group bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none"
+                  style={{ transitionDelay: `${index * 120}ms` }}
                 >
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                     <Icon className="w-8 h-8 text-primary transition-transform duration-300 group-hover:scale-105 motion-reduce:transform-none" />

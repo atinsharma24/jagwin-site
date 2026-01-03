@@ -55,7 +55,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <RippleButton
               href="/services"
-              className="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-orange-600 text-white font-body font-semibold text-lg rounded-lg shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none animate-fade-up motion-reduce:animate-none [animation-delay:220ms]"
+              className="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-orange-600 text-white font-body font-semibold text-lg rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none animate-fade-up motion-reduce:animate-none [animation-delay:220ms]"
             >
               Explore Services
             </RippleButton>

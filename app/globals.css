@@ -40,8 +40,10 @@
 @layer utilities {
   .reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateY(16px);
+    transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform, opacity;
   }
 
   .reveal.active {
@@ -51,8 +53,10 @@
 
   .reveal-left {
     opacity: 0;
-    transform: translateX(-30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateX(-16px);
+    transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform, opacity;
   }
 
   .reveal-left.active {
@@ -62,23 +66,15 @@
 
   .reveal-right {
     opacity: 0;
-    transform: translateX(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateX(16px);
+    transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform, opacity;
   }
 
   .reveal-right.active {
     opacity: 1;
     transform: translateX(0);
-  }
-
-  .reveal.reveal-fast {
-    transform: translateY(22px);
-    transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-      transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  .reveal.reveal-fast.active {
-    transform: translateY(0);
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -88,6 +84,7 @@
       opacity: 1;
       transform: none;
       transition: none;
+      will-change: auto;
     }
   }
 
