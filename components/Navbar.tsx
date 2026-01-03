@@ -11,11 +11,13 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    // Check for saved theme preference or default to light mode
-    const isDark = localStorage.getItem("theme") === "dark";
+    // Default to dark for new users; only use light if explicitly saved
+    const savedTheme = localStorage.getItem("theme");
+    const isDark = savedTheme !== "light";
     setDarkMode(isDark);
-    if (isDark) {
-      document.documentElement.classList.add("dark");
+    document.documentElement.classList.toggle("dark", isDark);
+    if (!savedTheme) {
+      localStorage.setItem("theme", isDark ? "dark" : "light");
     }
 
     // Handle scroll effect

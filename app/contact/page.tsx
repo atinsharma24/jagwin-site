@@ -13,6 +13,10 @@ export default function ContactPage() {
     message: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+
   const services = [
     "Lightning Protection System (LPS)",
     "Surge Protection Devices (SPD)",
@@ -24,10 +28,35 @@ export default function ContactPage() {
     "Power Quality Audit (PQA)",
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic will go here
-    console.log("Form submitted:", formData);
+    if (isSubmitting) return;
+    setSubmitError(null);
+    setSubmitSuccess(false);
+
+    try {
+      setIsSubmitting(true);
+
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = (await res.json()) as { ok: boolean; error?: string };
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || "Failed to send message");
+      }
+
+      setSubmitSuccess(true);
+      setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+    } catch (err: any) {
+      setSubmitError(typeof err?.message === "string" ? err.message : "Failed to send message");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -278,9 +307,22 @@ export default function ContactPage() {
                 </div>
 
                 {/* Submit Button */}
-                <RippleButton type="submit">
-                  Send Message
-                </RippleButton>
+                <div className="space-y-3">
+                  <RippleButton type="submit" disabled={isSubmitting} className="w-full px-6 py-3 bg-primary hover:bg-orange-600 text-white font-body font-semibold rounded-lg shadow-lg ui-motion hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none">
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                  </RippleButton>
+
+                  {submitSuccess && (
+                    <p className="text-sm font-body text-green-600 dark:text-green-400">
+                      Message sent successfully. We will get back to you soon.
+                    </p>
+                  )}
+                  {submitError && (
+                    <p className="text-sm font-body text-red-600 dark:text-red-400">
+                      {submitError}
+                    </p>
+                  )}
+                </div>
               </form>
             </div>
           </div>

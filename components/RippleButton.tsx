@@ -8,6 +8,7 @@ interface RippleButtonProps {
   onClick?: () => void;
   href?: string;
   type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 }
 
 export default function RippleButton({
@@ -16,10 +17,15 @@ export default function RippleButton({
   onClick,
   href,
   type = "button",
+  disabled = false,
 }: RippleButtonProps) {
   const [ripples, setRipples] = useState<{ x: number; y: number; id: number }[]>([]);
 
   const createRipple = (e: MouseEvent<HTMLElement>) => {
+    if (disabled) {
+      e.preventDefault();
+      return;
+    }
     const button = e.currentTarget;
     const rect = button.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -36,11 +42,17 @@ export default function RippleButton({
   };
 
   // Make width utilities (e.g. w-full) work by default on both <a> and <button>
-  const baseClassName = `relative inline-flex items-center justify-center overflow-hidden ui-motion ui-motion-fast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 ${className}`;
+  const baseClassName = `relative inline-flex items-center justify-center overflow-hidden ui-motion ui-motion-fast focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 ${disabled ? "opacity-70 cursor-not-allowed" : ""} ${className}`;
 
   if (href) {
     return (
-      <a href={href} className={baseClassName} onClick={createRipple}>
+      <a
+        href={href}
+        className={baseClassName}
+        onClick={createRipple}
+        aria-disabled={disabled}
+        tabIndex={disabled ? -1 : undefined}
+      >
         {children}
         {ripples.map((ripple) => (
           <span
@@ -61,7 +73,7 @@ export default function RippleButton({
   }
 
   return (
-    <button type={type} className={baseClassName} onClick={createRipple}>
+    <button type={type} className={baseClassName} onClick={createRipple} disabled={disabled}>
       {children}
       {ripples.map((ripple) => (
         <span
