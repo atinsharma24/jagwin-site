@@ -2,6 +2,7 @@
 
 import { Phone, Mail, MapPin } from "lucide-react";
 import { useState, useEffect } from "react";
+import RippleButton from "@/components/RippleButton";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -277,12 +278,9 @@ export default function ContactPage() {
                 </div>
 
                 {/* Submit Button */}
-                <button
-                  type="submit"
-                  className="w-full bg-primary hover:bg-primary/90 text-white font-body font-semibold py-4 px-6 rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none"
-                >
+                <RippleButton type="submit">
                   Send Message
-                </button>
+                </RippleButton>
               </form>
             </div>
           </div>

@@ -48,6 +48,14 @@ const config: Config = {
           "0%": { transform: "scale(0.95)", opacity: "0" },
           "100%": { transform: "scale(1)", opacity: "1" },
         },
+        ripple: {
+          "0%": { transform: "scale(0)", opacity: "0.6" },
+          "100%": { transform: "scale(4)", opacity: "0" },
+        },
+        "gradient-shift": {
+          "0%, 100%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+        },
       },
       animation: {
         "fade-in": "fade-in 600ms ease-out both",
@@ -56,6 +64,8 @@ const config: Config = {
         float: "float 3.5s ease-in-out infinite",
         shimmer: "shimmer 2s infinite linear",
         "scale-in": "scale-in 500ms cubic-bezier(0.22, 1, 0.36, 1) both",
+        ripple: "ripple 600ms ease-out",
+        "gradient-shift": "gradient-shift 8s ease infinite",
       },
     },
   },

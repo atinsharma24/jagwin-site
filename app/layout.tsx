@@ -3,6 +3,7 @@ import { League_Spartan, Open_Sans, Dancing_Script } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollProgress from "@/components/ScrollProgress";
 
 const leagueSpartan = League_Spartan({
   subsets: ["latin"],
@@ -78,6 +79,7 @@ export default function RootLayout({
       <body
         className={`${leagueSpartan.variable} ${openSans.variable} ${dancingScript.variable} antialiased bg-gray-100 text-slate-900`}
       >
+        <ScrollProgress />
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />

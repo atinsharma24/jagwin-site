@@ -2,6 +2,20 @@
 
 import { Shield, Clock, Award, User } from "lucide-react";
 import { useEffect } from "react";
+import { useCountUp } from "@/hooks/useCountUp";
+
+function StatCounter({ end, suffix, label }: { end: number; suffix?: string; label: string }) {
+  const { count, elementRef } = useCountUp(end, 2000);
+
+  return (
+    <div ref={elementRef as any} className="text-center reveal">
+      <div className="font-heading font-bold text-4xl md:text-5xl text-white mb-2">
+        {count}{suffix}
+      </div>
+      <div className="font-body text-white/90 text-sm md:text-base">{label}</div>
+    </div>
+  );
+}
 
 export default function AboutPage() {
   const features = [
@@ -127,6 +141,18 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section with Counter Animation */}
+      <section className="bg-gradient-to-br from-primary to-orange-600 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <StatCounter end={500} suffix="+" label="Projects Completed" />
+            <StatCounter end={99} suffix="%" label="Client Satisfaction" />
+            <StatCounter end={15} suffix="+" label="Years Experience" />
+            <StatCounter end={50} suffix="+" label="Expert Team Members" />
           </div>
         </div>
       </section>
