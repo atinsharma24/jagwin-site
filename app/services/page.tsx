@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Handshake } from "lucide-react";
-import { useState, useRef, MouseEvent, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const FALLBACK_IMAGES = {
   lightning:
@@ -40,36 +40,10 @@ function ServiceCard({
   index: number;
 }) {
   const [src, setSrc] = useState(service.image);
-  const cardRef = useRef<HTMLDivElement>(null);
-
-  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
-    const card = cardRef.current;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const rotateX = (y - centerY) / 10;
-    const rotateY = (centerX - x) / 10;
-
-    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-    card.style.boxShadow = "0 20px 60px rgba(240, 124, 0, 0.3)";
-  };
-
-  const handleMouseLeave = () => {
-    if (!cardRef.current) return;
-    cardRef.current.style.transform =
-      "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)";
-    cardRef.current.style.boxShadow = "";
-  };
 
   return (
     <div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className="reveal reveal-fast group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-2xl hover:border-orange-200 transition-all duration-300 motion-reduce:transform-none"
+      className="reveal reveal-fast group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-orange-200 motion-reduce:transform-none"
       style={{ transitionDelay: `${index * 40}ms` }}
     >
       <div className="relative aspect-[4/3] overflow-hidden">
@@ -77,7 +51,7 @@ function ServiceCard({
           src={src}
           alt={service.title}
           fill
-          className="object-cover group-hover:scale-125 transition-transform duration-700 ease-out"
+          className="object-cover group-hover:scale-110 transition-transform duration-600 ease-out"
           onError={() => setSrc(FALLBACK_IMAGES[service.fallbackKey])}
         />
       </div>

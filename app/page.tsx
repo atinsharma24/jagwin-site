@@ -3,13 +3,9 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import RippleButton from "@/components/RippleButton";
-import MorphingBlob from "@/components/MorphingBlob";
-import useMagneticCursor from "@/hooks/useMagneticCursor";
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
-  const magneticRef1 = useMagneticCursor<HTMLDivElement>(0.15);
-  const magneticRef2 = useMagneticCursor<HTMLDivElement>(0.15);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,15 +20,10 @@ export default function Home() {
     <div className="relative">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Morphing Blobs */}
-        <MorphingBlob className="top-20 left-10 w-96 h-96 animate-blob" color="#F07C00" />
-        <MorphingBlob className="bottom-20 right-10 w-80 h-80 animate-blob [animation-delay:2s]" color="#a855f7" />
-        <MorphingBlob className="top-1/2 left-1/2 w-72 h-72 animate-blob [animation-delay:4s]" color="#ec4899" />
-        
         {/* Background Image with Parallax Effect */}
         <div
           className="absolute inset-0 z-0"
-          style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+          style={{ transform: `translateY(${scrollY * 0.25}px)` }}
         >
           <Image
             src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80"
@@ -62,27 +53,23 @@ export default function Home() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <div ref={magneticRef1} className="w-full sm:w-auto transition-transform duration-300 ease-out motion-reduce:transform-none">
-              <RippleButton
-                href="/services"
-                className="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-orange-600 text-white font-body font-semibold text-lg rounded-lg shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none animate-fade-up motion-reduce:animate-none [animation-delay:220ms]"
-              >
-                Explore Services
-              </RippleButton>
-            </div>
-            <div ref={magneticRef2} className="w-full sm:w-auto transition-transform duration-300 ease-out motion-reduce:transform-none">
-              <RippleButton
-                href="/contact"
-                className="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-body font-semibold text-lg rounded-lg transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none animate-fade-up motion-reduce:animate-none [animation-delay:320ms]"
-              >
-                Contact Us
-              </RippleButton>
-            </div>
+            <RippleButton
+              href="/services"
+              className="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-orange-600 text-white font-body font-semibold text-lg rounded-lg shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none animate-fade-up motion-reduce:animate-none [animation-delay:220ms]"
+            >
+              Explore Services
+            </RippleButton>
+            <RippleButton
+              href="/contact"
+              className="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-body font-semibold text-lg rounded-lg transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.99] motion-reduce:transform-none motion-reduce:transition-none animate-fade-up motion-reduce:animate-none [animation-delay:320ms]"
+            >
+              Contact Us
+            </RippleButton>
           </div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce motion-reduce:animate-none">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-pulse motion-reduce:animate-none">
           <div className="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-2">
             <div className="w-1 h-3 bg-white/50 rounded-full"></div>
           </div>

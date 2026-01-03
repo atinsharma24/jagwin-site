@@ -56,21 +56,6 @@ const config: Config = {
           "0%, 100%": { backgroundPosition: "0% 50%" },
           "50%": { backgroundPosition: "100% 50%" },
         },
-        blob: {
-          "0%, 100%": {
-            transform: "translate(0, 0) scale(1)",
-          },
-          "33%": {
-            transform: "translate(30px, -50px) scale(1.1)",
-          },
-          "66%": {
-            transform: "translate(-20px, 20px) scale(0.9)",
-          },
-        },
-        "icon-bounce": {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-4px)" },
-        },
       },
       animation: {
         "fade-in": "fade-in 600ms ease-out both",
@@ -81,8 +66,6 @@ const config: Config = {
         "scale-in": "scale-in 500ms cubic-bezier(0.22, 1, 0.36, 1) both",
         ripple: "ripple 600ms ease-out",
         "gradient-shift": "gradient-shift 8s ease infinite",
-        blob: "blob 7s ease-in-out infinite",
-        "icon-bounce": "icon-bounce 2s ease-in-out infinite",
       },
     },
   },

@@ -45,7 +45,7 @@ export default function RippleButton({
         {ripples.map((ripple) => (
           <span
             key={ripple.id}
-            className="absolute bg-white/30 rounded-full animate-ripple pointer-events-none"
+            className="absolute bg-white/20 rounded-full animate-ripple pointer-events-none"
             style={{
               left: ripple.x,
               top: ripple.y,
@@ -66,7 +66,7 @@ export default function RippleButton({
       {ripples.map((ripple) => (
         <span
           key={ripple.id}
-          className="absolute bg-white/30 rounded-full animate-ripple pointer-events-none"
+          className="absolute bg-white/20 rounded-full animate-ripple pointer-events-none"
           style={{
             left: ripple.x,
             top: ripple.y,
