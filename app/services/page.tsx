@@ -23,9 +23,11 @@ export default function ServicesPage() {
     const id = searchParams.get("id");
     if (id) {
       const serviceId = parseInt(id, 10);
-      const foundService = SERVICES.find((s) => s.id === serviceId);
-      if (foundService) {
-        setSelectedService(foundService);
+      if (!Number.isNaN(serviceId)) {
+        const foundService = SERVICES.find((s) => s.id === serviceId);
+        if (foundService) {
+          setSelectedService(foundService);
+        }
       }
     }
   }, [searchParams]);
