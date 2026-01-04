@@ -51,7 +51,7 @@ export default function ServiceCard({
           src={src}
           alt={service.title}
           fill
-          className="object-cover group-hover:scale-110 ui-motion ui-motion-slow"
+          className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out motion-reduce:transition-none"
           onError={() => setSrc(FALLBACK_IMAGES[service.fallbackKey as FallbackKey])}
         />
       </div>
