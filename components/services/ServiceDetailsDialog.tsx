@@ -77,14 +77,16 @@ export default function ServiceDetailsDialog({
         onClick={onClose}
       >       
         <motion.div
-          layoutId={`service-card-${service.id}`}
           role="dialog"
           aria-modal="true"
           aria-label={`${service.title} details`}
           onClick={(e) => e.stopPropagation()}
+          initial={reduceMotion ? false : { opacity: 0, scale: 0.95, y: 10 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.95, y: 10 }}
+          transition={reduceMotion ? { duration: 0 } : { duration: 0.25, ease: EASE_PREMIUM }}
           className="relative flex flex-col w-full max-w-[800px] max-h-[90vh] overflow-y-auto rounded-2xl border border-gray-200/70 dark:border-gray-700/70 bg-white/95 dark:bg-gray-900/95 shadow-2xl"
-          transition={cardTransition}
-          style={reduceMotion ? undefined : { willChange: "transform" }}
+          style={reduceMotion ? undefined : { willChange: "transform, opacity" }}
         >
           {/* Hero */}
           <div className="relative aspect-[16/9] shrink-0">
