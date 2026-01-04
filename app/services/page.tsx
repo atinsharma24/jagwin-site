@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Handshake } from "lucide-react";
 import { AnimatePresence, LayoutGroup } from "framer-motion";
 import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 
 import ServiceCard from "@/components/services/ServiceCard";
 import ServiceDetailsDialog from "@/components/services/ServiceDetailsDialog";
@@ -12,9 +13,22 @@ import { SERVICES } from "@/lib/services";
 
 export default function ServicesPage() {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const searchParams = useSearchParams();
 
   const closeDetails = () => setSelectedService(null);
   const openDetails = (service: Service) => setSelectedService(service);
+
+  // Handle deep linking from URL parameter
+  useEffect(() => {
+    const id = searchParams.get("id");
+    if (id) {
+      const serviceId = parseInt(id, 10);
+      const foundService = SERVICES.find((s) => s.id === serviceId);
+      if (foundService) {
+        setSelectedService(foundService);
+      }
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     if (!selectedService) return;
