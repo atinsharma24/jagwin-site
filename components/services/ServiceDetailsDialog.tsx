@@ -5,6 +5,7 @@ import Image from "next/image";
 import { X } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 import type { Service } from "@/lib/services";
 import { FALLBACK_IMAGES } from "@/lib/services";
@@ -33,14 +34,18 @@ export default function ServiceDetailsDialog({
 }) {
   const [heroSrc, setHeroSrc] = useState(service.image);
   const closeButtonRef = useRef<HTMLButtonElement | null>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     closeButtonRef.current?.focus();
   }, []);
 
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <motion.div
-      className="fixed inset-0 z-50"
+      className="fixed inset-0 z-[9999]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -49,22 +54,24 @@ export default function ServiceDetailsDialog({
       {/* Backdrop */}
       <motion.div
         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-        onClick={onClose}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
       />
 
-      {/* Modal positioner (slightly top-aligned like Netflix) */}
-      <div className="absolute inset-0 flex justify-center items-start px-4 pt-10 pb-8 sm:px-6">
+      {/* Modal positioner (kept below fixed navbar) */}
+      <div
+        className="absolute inset-0 flex justify-center items-center p-4 sm:p-6"
+        onClick={onClose}
+      >       
         <motion.div
           layoutId={`service-card-${service.id}`}
           role="dialog"
           aria-modal="true"
           aria-label={`${service.title} details`}
           onClick={(e) => e.stopPropagation()}
-          className="relative w-full max-w-[800px] max-h-[90vh] overflow-hidden rounded-2xl border border-gray-200/70 dark:border-gray-700/70 bg-white/95 dark:bg-gray-900/95 shadow-2xl"
+          className="relative flex flex-col w-full max-w-[800px] max-h-[90vh] overflow-y-auto rounded-2xl border border-gray-200/70 dark:border-gray-700/70 bg-white/95 dark:bg-gray-900/95 shadow-2xl"
           transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
         >
           {/* Hero */}
@@ -100,9 +107,8 @@ export default function ServiceDetailsDialog({
               </button>
           </div>
 
-          {/* Scrollable body (internal overflow) */}
-          <div className="flex-1 overflow-y-auto overscroll-contain">
-            <div className="p-5 sm:p-6">
+          {/* Body */}
+          <div className="p-5 sm:p-6">
               <div className="flex flex-col lg:flex-row gap-4 lg:items-start lg:justify-between">
                 <ServiceOverviewCard
                   title="Overview"
@@ -184,10 +190,11 @@ export default function ServiceDetailsDialog({
                   Close
                 </button>
               </div>
-            </div>
           </div>
         </motion.div>
       </div>
     </motion.div>
+    ,
+    document.body
   );
 }
