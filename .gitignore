@@ -4,6 +4,9 @@ node_modules
 .next
 out
 
+# TypeScript
+tsconfig.tsbuildinfo
+
 # Logs
 *.log
 npm-debug.log*

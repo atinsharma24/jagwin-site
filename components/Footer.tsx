@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { SERVICES } from "@/lib/services";
 
 export default function Footer() {
   const quickLinks = [
@@ -8,17 +9,6 @@ export default function Footer() {
     { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
     { href: "/contact", label: "Contact" },
-  ];
-
-  const services = [
-    "Lightning Protection System (LPS)",
-    "Surge Protection Devices (SPD)",
-    "Chemical Earthing Solutions",
-    "Online UPS & SMF Batteries",
-    "Servo Stabilizers",
-    "Lithium Ion Batteries",
-    "Solar EPC & BOS Kit",
-    "Power Quality Audit (PQA)",
   ];
 
   return (
@@ -65,9 +55,14 @@ export default function Footer() {
           <div>
             <h3 className="font-heading text-white font-bold mb-4">Our Services</h3>
             <ul className="space-y-2">
-              {services.map((service) => (
-                <li key={service} className="text-sm font-body text-gray-400">
-                  {service}
+              {SERVICES.map((service) => (
+                <li key={service.id}>
+                  <Link
+                    href={`/services?id=${service.id}`}
+                    className="text-sm font-body text-gray-400 hover:text-primary ui-motion ui-motion-fast hover:translate-x-1 motion-reduce:transform-none inline-flex"
+                  >
+                    {service.title}
+                  </Link>
                 </li>
               ))}
             </ul>

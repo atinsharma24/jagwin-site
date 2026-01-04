@@ -3,18 +3,34 @@
 import Link from "next/link";
 import { Handshake } from "lucide-react";
 import { AnimatePresence, LayoutGroup } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 
 import ServiceCard from "@/components/services/ServiceCard";
 import ServiceDetailsDialog from "@/components/services/ServiceDetailsDialog";
 import type { Service } from "@/lib/services";
 import { SERVICES } from "@/lib/services";
 
-export default function ServicesPage() {
+function ServicesContent() {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const searchParams = useSearchParams();
 
   const closeDetails = () => setSelectedService(null);
   const openDetails = (service: Service) => setSelectedService(service);
+
+  // Handle deep linking from URL parameter
+  useEffect(() => {
+    const id = searchParams.get("id");
+    if (id) {
+      const serviceId = parseInt(id, 10);
+      if (!Number.isNaN(serviceId)) {
+        const foundService = SERVICES.find((s) => s.id === serviceId);
+        if (foundService) {
+          setSelectedService(foundService);
+        }
+      }
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     if (!selectedService) return;
@@ -89,5 +105,26 @@ export default function ServicesPage() {
         </LayoutGroup>
       </section>
     </div>
+  );
+}
+
+export default function ServicesPage() {
+  return (
+    <Suspense fallback={
+      <div className="pt-20 min-h-screen bg-gray-100 dark:bg-gray-900">
+        <section className="py-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="font-heading font-bold text-4xl md:text-5xl text-gray-900 dark:text-white mb-4">
+              Our Services
+            </h1>
+            <p className="font-body text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+              Comprehensive electrical safety and power solutions designed for industrial and commercial excellence
+            </p>
+          </div>
+        </section>
+      </div>
+    }>
+      <ServicesContent />
+    </Suspense>
   );
 }
