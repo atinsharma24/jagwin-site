@@ -113,32 +113,68 @@ export default function AboutPage() {
             Leadership
           </h2>
 
-          <div className="reveal-right bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-2xl shadow-xl p-8 md:p-12">
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
-              {/* Profile Image Placeholder */}
-              <div className="flex-shrink-0">
-                <div className="w-32 h-32 bg-gradient-to-br from-primary to-orange-600 rounded-full flex items-center justify-center shadow-lg">
-                  <User className="w-16 h-16 text-white" />
+          <div className="flex flex-col gap-8">
+            {/* Vishal Sharma */}
+            <div className="reveal-right bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-2xl shadow-xl p-8 md:p-12">
+              <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+                {/* Profile Image Placeholder */}
+                <div className="flex-shrink-0">
+                  <div className="w-32 h-32 bg-gradient-to-br from-primary to-orange-600 rounded-full flex items-center justify-center shadow-lg">
+                    <User className="w-16 h-16 text-white" />
+                  </div>
+                </div>
+
+                {/* Profile Info */}
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="font-heading font-bold text-2xl text-gray-900 dark:text-white mb-2">
+                    Vishal Sharma
+                  </h3>
+                  <p className="font-body text-primary font-semibold text-lg mb-4">
+                    Project Head
+                  </p>
+                  <p className="font-body text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Leading Jagwin Enterprises with a vision for excellence in
+                    electrical safety and power solutions. With extensive
+                    experience in project management and technical expertise,
+                    Vishal ensures that every project meets the highest standards
+                    of quality and reliability. His commitment to innovation and
+                    customer satisfaction drives our team to deliver exceptional
+                    results across all our service offerings.
+                  </p>
                 </div>
               </div>
+            </div>
 
-              {/* Profile Info */}
-              <div className="flex-1 text-center md:text-left">
-                <h3 className="font-heading font-bold text-2xl text-gray-900 dark:text-white mb-2">
-                  Vishal Sharma
-                </h3>
-                <p className="font-body text-primary font-semibold text-lg mb-4">
-                  Project Head
-                </p>
-                <p className="font-body text-gray-600 dark:text-gray-300 leading-relaxed">
-                  Leading Jagwin Enterprises with a vision for excellence in
-                  electrical safety and power solutions. With extensive
-                  experience in project management and technical expertise,
-                  Vishal ensures that every project meets the highest standards
-                  of quality and reliability. His commitment to innovation and
-                  customer satisfaction drives our team to deliver exceptional
-                  results across all our service offerings.
-                </p>
+            {/* Vinod Swamy */}
+            <div className="reveal-left bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-2xl shadow-xl p-8 md:p-12">
+              <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
+                {/* Profile Image Placeholder */}
+                <div className="flex-shrink-0">
+                  <div className="w-32 h-32 bg-gradient-to-br from-primary to-orange-600 rounded-full flex items-center justify-center shadow-lg">
+                    <User className="w-16 h-16 text-white" />
+                  </div>
+                </div>
+
+                {/* Profile Info */}
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="font-heading font-bold text-2xl text-gray-900 dark:text-white mb-2">
+                    Vinod Swamy
+                  </h3>
+                  <p className="font-body text-primary font-semibold text-lg mb-4">
+                    Sales Head | 15+ Years Experience in Sales & Marketing
+                  </p>
+                  <p className="font-body text-gray-600 dark:text-gray-300 leading-relaxed">
+                    Spearheading market expansion and client relationship strategies 
+                    at Jagwin Enterprises with over 15 years of proven expertise in 
+                    sales and marketing. Vinod's strategic vision has been instrumental 
+                    in establishing strong client partnerships across diverse industries 
+                    and expanding our presence throughout India. His deep understanding 
+                    of market dynamics, combined with a customer-centric approach, ensures 
+                    sustained growth and long-term business success. Under his leadership, 
+                    our sales team consistently delivers exceptional value while building 
+                    lasting relationships that drive mutual prosperity.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -149,10 +185,10 @@ export default function AboutPage() {
       <section className="bg-gradient-to-br from-primary to-orange-600 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <StatCounter end={500} suffix="+" label="Projects Completed" />
+            <StatCounter end={100} suffix="+" label="Projects Completed" />
             <StatCounter end={99} suffix="%" label="Client Satisfaction" />
             <StatCounter end={15} suffix="+" label="Years Experience" />
-            <StatCounter end={50} suffix="+" label="Expert Team Members" />
+            <StatCounter end={25} suffix="+" label="Expert Team Members" />
           </div>
         </div>
       </section>
