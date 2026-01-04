@@ -33,7 +33,7 @@ export default function Home() {
             priority
             quality={90}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40 animate-gradient-shift bg-[length:200%_200%]"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40 animate-gradient-shift motion-reduce:animate-none bg-[length:200%_200%]"></div>
         </div>
 
         {/* Hero Content */}
