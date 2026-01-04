@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { X } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
@@ -32,9 +32,18 @@ export default function ServiceDetailsDialog({
   service: Service;
   onClose: () => void;
 }) {
+  const reduceMotion = useReducedMotion();
   const [heroSrc, setHeroSrc] = useState(service.image);
   const closeButtonRef = useRef<HTMLButtonElement | null>(null);
   const [mounted, setMounted] = useState(false);
+
+  const EASE_PREMIUM: [number, number, number, number] = [0.22, 1, 0.36, 1];
+  const overlayTransition = reduceMotion
+    ? { duration: 0 }
+    : { duration: 0.18, ease: EASE_PREMIUM };
+  const cardTransition = reduceMotion
+    ? { duration: 0 }
+    : { duration: 0.5, ease: EASE_PREMIUM };
 
   useEffect(() => {
     setMounted(true);
@@ -46,18 +55,20 @@ export default function ServiceDetailsDialog({
   return createPortal(
     <motion.div
       className="fixed inset-0 z-[9999]"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+      initial={reduceMotion ? false : { opacity: 0 }}
+      animate={{ opacity: 1, pointerEvents: "auto" }}
+      exit={{ opacity: 0, pointerEvents: "none" }}
+      transition={overlayTransition}
+      style={reduceMotion ? undefined : { willChange: "opacity" }}
     >
       {/* Backdrop */}
       <motion.div
         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-        initial={{ opacity: 0 }}
+        initial={reduceMotion ? false : { opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
+        transition={overlayTransition}
+        style={reduceMotion ? undefined : { willChange: "opacity" }}
       />
 
       {/* Modal positioner (kept below fixed navbar) */}
@@ -72,7 +83,8 @@ export default function ServiceDetailsDialog({
           aria-label={`${service.title} details`}
           onClick={(e) => e.stopPropagation()}
           className="relative flex flex-col w-full max-w-[800px] max-h-[90vh] overflow-y-auto rounded-2xl border border-gray-200/70 dark:border-gray-700/70 bg-white/95 dark:bg-gray-900/95 shadow-2xl"
-          transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
+          transition={cardTransition}
+          style={reduceMotion ? undefined : { willChange: "transform" }}
         >
           {/* Hero */}
           <div className="relative aspect-[16/9] shrink-0">

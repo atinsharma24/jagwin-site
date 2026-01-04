@@ -80,7 +80,7 @@ export default function Navbar() {
                 className="font-body text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary ui-motion ui-motion-fast relative group"
               >
                 {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full ui-motion ui-motion-fast"></span>
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary origin-left scale-x-0 group-hover:scale-x-100 ui-motion ui-motion-fast"></span>
               </Link>
             ))}
           </div>
