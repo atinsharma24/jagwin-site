@@ -17,25 +17,6 @@ export default function ServicesPage() {
   const openDetails = (service: Service) => setSelectedService(service);
 
   useEffect(() => {
-    const revealElements = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
-    
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -100px 0px" }
-    );
-
-    revealElements.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
     if (!selectedService) return;
 
     const onKeyDown = (e: KeyboardEvent) => {
